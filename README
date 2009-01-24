@@ -1,256 +1,329 @@
-== Welcome to Rails
+Flash Video Tutorial with Rails, ffmpeg, FlowPlayer, and attachment_fu
 
-Rails is a web-application framework that includes everything needed to create 
-database-backed web applications according to the Model-View-Control pattern. 
-
-This pattern splits the view (also called the presentation) into "dumb" templates
-that are primarily responsible for inserting pre-built data in between HTML tags.
-The model contains the "smart" domain objects (such as Account, Product, Person,
-Post) that holds all the business logic and knows how to persist themselves to
-a database. The controller handles the incoming requests (such as Save New Account,
-Update Product, Show Post) by manipulating the model and directing data to the view.
-
-In Rails, the model is handled by what's called an object-relational mapping
-layer entitled Active Record. This layer allows you to present the data from
-database rows as objects and embellish these data objects with business logic
-methods. You can read more about Active Record in
-link:files/vendor/rails/activerecord/README.html.
-
-The controller and view are handled by the Action Pack, which handles both
-layers by its two parts: Action View and Action Controller. These two layers
-are bundled in a single package due to their heavy interdependence. This is
-unlike the relationship between the Active Record and Action Pack that is much
-more separate. Each of these packages can be used independently outside of
-Rails.  You can read more about Action Pack in
-link:files/vendor/rails/actionpack/README.html.
+Quick Tutorial today to get a simple Video Model setup and going with Flowplayer today. We want to be able to upload videos and convert them to flash .flv files. For this I'll be using ffmpeg. Other plugins in this tutorial include acts_as_state_machine and Rick Olsen's attachment_fu. Lets get started!
 
 
-== Getting Started
+Note: You can find the source code for this app on github at http://github.com/balgarath/video-app/tree/master
 
-1. At the command prompt, start a new Rails application using the <tt>rails</tt> command
-   and your application name. Ex: rails myapp
-2. Change directory into myapp and start the web server: <tt>script/server</tt> (run with --help for options)
-3. Go to http://localhost:3000/ and get "Welcome aboard: You're riding the Rails!"
-4. Follow the guidelines to start developing your application
+1. Setup
 
 
-== Web Servers
-
-By default, Rails will try to use Mongrel and lighttpd if they are installed, otherwise
-Rails will use WEBrick, the webserver that ships with Ruby. When you run script/server,
-Rails will check if Mongrel exists, then lighttpd and finally fall back to WEBrick. This ensures
-that you can always get up and running quickly.
-
-Mongrel is a Ruby-based webserver with a C component (which requires compilation) that is
-suitable for development and deployment of Rails applications. If you have Ruby Gems installed,
-getting up and running with mongrel is as easy as: <tt>gem install mongrel</tt>.
-More info at: http://mongrel.rubyforge.org
-
-If Mongrel is not installed, Rails will look for lighttpd. It's considerably faster than
-Mongrel and WEBrick and also suited for production use, but requires additional
-installation and currently only works well on OS X/Unix (Windows users are encouraged
-to start with Mongrel). We recommend version 1.4.11 and higher. You can download it from
-http://www.lighttpd.net.
-
-And finally, if neither Mongrel or lighttpd are installed, Rails will use the built-in Ruby
-web server, WEBrick. WEBrick is a small Ruby web server suitable for development, but not
-for production.
-
-But of course its also possible to run Rails on any platform that supports FCGI.
-Apache, LiteSpeed, IIS are just a few. For more information on FCGI,
-please visit: http://wiki.rubyonrails.com/rails/pages/FastCGI
+First, lets create an empty app
 
 
-== Apache .htaccess example
-
-# General Apache options
-AddHandler fastcgi-script .fcgi
-AddHandler cgi-script .cgi
-Options +FollowSymLinks +ExecCGI
-
-# If you don't want Rails to look in certain directories,
-# use the following rewrite rules so that Apache won't rewrite certain requests
-# 
-# Example:
-#   RewriteCond %{REQUEST_URI} ^/notrails.*
-#   RewriteRule .* - [L]
-
-# Redirect all requests not available on the filesystem to Rails
-# By default the cgi dispatcher is used which is very slow
-# 
-# For better performance replace the dispatcher with the fastcgi one
-#
-# Example:
-#   RewriteRule ^(.*)$ dispatch.fcgi [QSA,L]
-RewriteEngine On
-
-# If your Rails application is accessed via an Alias directive,
-# then you MUST also set the RewriteBase in this htaccess file.
-#
-# Example:
-#   Alias /myrailsapp /path/to/myrailsapp/public
-#   RewriteBase /myrailsapp
-
-RewriteRule ^$ index.html [QSA]
-RewriteRule ^([^.]+)$ $1.html [QSA]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*)$ dispatch.cgi [QSA,L]
-
-# In case Rails experiences terminal errors
-# Instead of displaying this message you can supply a file here which will be rendered instead
-# 
-# Example:
-#   ErrorDocument 500 /500.html
-
-ErrorDocument 500 "<h2>Application error</h2>Rails application failed to start properly"
+rails videoapp -d mysql
 
 
-== Debugging Rails
 
-Sometimes your application goes wrong.  Fortunately there are a lot of tools that
-will help you debug it and get it back on the rails.
+Do all your basic setup...(edit database.yml, remove public/index, ...). In routes.rb, add this line:
 
-First area to check is the application log files.  Have "tail -f" commands running
-on the server.log and development.log. Rails will automatically display debugging
-and runtime information to these files. Debugging info will also be shown in the
-browser on requests from 127.0.0.1.
+  map.root :controller => "videos"
+ map.resources :videos
 
-You can also log your own messages directly into the log file from your code using
-the Ruby logger class from inside your controllers. Example:
 
-  class WeblogController < ActionController::Base
-    def destroy
-      @weblog = Weblog.find(params[:id])
-      @weblog.destroy
-      logger.info("#{Time.now} Destroyed Weblog ID ##{@weblog.id}!")
+The first line maps '/' to the videos controller, and the next establishes RESTful routes for videos.
+
+Now we need to figure out what flash video player we want to use. For this tutorial, I will be using FlowPlayer, an open-source flash video player. You will need to download flowplayer.zip from http://flowplayer.org/download/index.html. Unzip it to /public. Grab the /example/flowplayer-3.0.2.min.js file and put it in /public/javascripts/flowplayer.js. Put example/style.css in /public/stylesheets.
+
+
+Next we need to install attachment_fu to handle file downloads.
+
+
+./script/plugin install http://svn.techno-weenie.net/projects/plugins/attachment_fu/
+
+
+
+And you will need ffmpeg for converting uploaded file to .swf. This works for me in Ubuntu...
+
+sudo apt-get install ffmpeg
+
+
+
+And last, lets install the acts_as_state_machine plugin. We will be using it to keep track of the current state of conversion for the video:
+
+ ./script/plugin install http://elitists.textdriven.com/svn/plugins/acts_as_state_machine/trunk/
+
+
+
+
+
+2. Database/Model Setup
+
+
+
+Now we are ready to set up the model. First, run this command to generate the files for you:
+
+
+  ./script/generate model Video
+
+
+
+This last line will also generate a create_video migration in db/migrate/. Open up that file and put this in it:
+
+
+
+class CreateVideos < ActiveRecord::Migration
+  def self.up
+    create_table :videos do |t|
+      t.string :content_type
+      t.integer :size
+      t.string :filename
+      t.string :title
+      t.string :description
+      t.string :state
+      t.timestamps
     end
   end
 
-The result will be a message in your log file along the lines of:
-
-  Mon Oct 08 14:22:29 +1000 2007 Destroyed Weblog ID #1
-
-More information on how to use the logger is at http://www.ruby-doc.org/core/
-
-Also, Ruby documentation can be found at http://www.ruby-lang.org/ including:
-
-* The Learning Ruby (Pickaxe) Book: http://www.ruby-doc.org/docs/ProgrammingRuby/
-* Learn to Program: http://pine.fm/LearnToProgram/  (a beginners guide)
-
-These two online (and free) books will bring you up to speed on the Ruby language
-and also on programming in general.
+  def self.down
+    drop_table :videos
+  end
+end
 
 
-== Debugger
 
-Debugger support is available through the debugger command when you start your Mongrel or
-Webrick server with --debugger. This means that you can break out of execution at any point
-in the code, investigate and change the model, AND then resume execution! 
-You need to install ruby-debug to run the server in debugging mode. With gems, use 'gem install ruby-debug'
-Example:
+Content_type, size, and filename are used by the attachment_fu plugin. The state field will be used by the act_as_state_machine plugin to keep track of video converting.
 
-  class WeblogController < ActionController::Base
-    def index
-      @posts = Post.find(:all)
-      debugger
+
+
+Lets move on to the model; open up /app/model/video.rb and add this into it:
+
+
+
+  has_attachment :content_type => :video, 
+                 :storage => :file_system, 
+                 :max_size => 300.megabytes
+
+
+This is for the attachment_fu plugin, self-explanatory.
+
+Since we will be using the acts_as_state_machine plugin to keep track of the state of conversion for videos, lets go ahead and add in the states we will be using. Add this to video.rb:
+
+
+
+  #acts as state machine plugin
+  acts_as_state_machine :initial => :pending
+  state :pending
+  state :converting
+  state :converted, :enter => :set_new_filename
+  state :error
+
+  event :convert do
+    transitions :from => :pending, :to => :converting
+  end
+
+  event :converted do
+    transitions :from => :converting, :to => :converted
+  end
+
+  event :failure do
+    transitions :from => :converting, :to => :error
+  end
+
+
+Note: I got some of this part from Jim Neath's tutorial.
+
+Now we can use @video.convert!, @video.converted!, @video.failed! to change the state of a particular Video. The last code we need to add to the model is this:
+
+
+
+
+  # This method is called from the controller and takes care of the converting
+  def convert
+    self.convert!
+    success = system(convert_command)
+    if success && $?.exitstatus == 0
+      self.converted!
+    else
+      self.failure!
     end
   end
 
-So the controller will accept the action, run the first line, then present you
-with a IRB prompt in the server window. Here you can do things like:
+  protected
+  
+  def convert_command
+  
+  #construct new file extension
+    flv =  "." + id.to_s + ".flv"
 
-  >> @posts.inspect
-  => "[#<Post:0x14a6be8 @attributes={\"title\"=>nil, \"body\"=>nil, \"id\"=>\"1\"}>,
-       #<Post:0x14a6620 @attributes={\"title\"=>\"Rails you know!\", \"body\"=>\"Only ten..\", \"id\"=>\"2\"}>]"
-  >> @posts.first.title = "hello from a debugger"
-  => "hello from a debugger"
+  #build the command to execute ffmpeg
+    command = <<-end_command
+     ffmpeg -i #{ RAILS_ROOT + '/public' + public_filename }  -ar 22050 -ab 32 -s 480x360 -vcodec flv -r 25 -qscale 8 -f flv -y #{ RAILS_ROOT + '/public' + public_filename + flv }
+      
+    end_command
+    
+    logger.debug "Converting video...command: " + command
+    command
+  end
 
-...and even better is that you can examine how your runtime objects actually work:
-
-  >> f = @posts.first
-  => #<Post:0x13630c4 @attributes={"title"=>nil, "body"=>nil, "id"=>"1"}>
-  >> f.
-  Display all 152 possibilities? (y or n)
-
-Finally, when you're ready to resume execution, you enter "cont"
+  # This updates the stored filename with the new flash video file
+  def set_new_filename
+    update_attribute(:filename, "#{filename}.#{id}.flv")
+    update_attribute(:content_type, "application/x-flash-video")
+  end
 
 
-== Console
 
-You can interact with the domain model by starting the console through <tt>script/console</tt>.
-Here you'll have all parts of the application configured, just like it is when the
-application is running. You can inspect domain models, change values, and save to the
-database. Starting the script without arguments will launch it in the development environment.
-Passing an argument will specify a different environment, like <tt>script/console production</tt>.
 
-To reload your controllers and models after launching the console run <tt>reload!</tt>
+A lot of stuff going on here. Convert will be called from the create action. When called, it sets the state of the video to 'convert' and runs ffmpeg to convert the file to flash(.flv). It will then mark the file as either 'converted' or 'failed'.
 
-== dbconsole
 
-You can go to the command line of your database directly through <tt>script/dbconsole</tt>.
-You would be connected to the database with the credentials defined in database.yml.
-Starting the script without arguments will connect you to the development database. Passing an
-argument will connect you to a different database, like <tt>script/dbconsole production</tt>.
-Currently works for mysql, postgresql and sqlite.
+Now that that is all done, we can create our database and run the migrations:
 
-== Description of Contents
 
-app
-  Holds all the code that's specific to this particular application.
 
-app/controllers
-  Holds controllers that should be named like weblogs_controller.rb for
-  automated URL mapping. All controllers should descend from ApplicationController
-  which itself descends from ActionController::Base.
+rake db:create
+rake db:migrate
 
-app/models
-  Holds models that should be named like post.rb.
-  Most models will descend from ActiveRecord::Base.
 
-app/views
-  Holds the template files for the view that should be named like
-  weblogs/index.html.erb for the WeblogsController#index action. All views use eRuby
-  syntax.
 
-app/views/layouts
-  Holds the template files for layouts to be used with views. This models the common
-  header/footer method of wrapping views. In your views, define a layout using the
-  <tt>layout :default</tt> and create a file named default.html.erb. Inside default.html.erb,
-  call <% yield %> to render the view using this layout.
+3. Controller/Views
 
-app/helpers
-  Holds view helpers that should be named like weblogs_helper.rb. These are generated
-  for you automatically when using script/generate for controllers. Helpers can be used to
-  wrap functionality for your views into methods.
 
-config
-  Configuration files for the Rails environment, the routing map, the database, and other dependencies.
+Now we can generate our controller, model, and view files:
 
-db
-  Contains the database schema in schema.rb.  db/migrate contains all
-  the sequence of Migrations for your schema.
 
-doc
-  This directory is where your application documentation will be stored when generated
-  using <tt>rake doc:app</tt>
+ ./script/generate controller videos index show new
 
-lib
-  Application specific libraries. Basically, any kind of custom code that doesn't
-  belong under controllers, models, or helpers. This directory is in the load path.
 
-public
-  The directory available for the web server. Contains subdirectories for images, stylesheets,
-  and javascripts. Also contains the dispatchers and the default HTML files. This should be
-  set as the DOCUMENT_ROOT of your web server.
 
-script
-  Helper scripts for automation and generation.
+Open up /app/controllers/videos_contoller.rb and put in this code:
 
-test
-  Unit and functional tests along with fixtures. When using the script/generate scripts, template
-  test files will be generated for you and placed in this directory.
 
-vendor
-  External libraries that the application depends on. Also includes the plugins subdirectory.
-  If the app has frozen rails, those gems also go here, under vendor/rails/.
-  This directory is in the load path.
+
+class VideosController < ApplicationController
+
+ #turn off attachment_fu's auto file renaming when you change the value of the filename field
+  skip_filter :rename_file
+  
+  def index
+    @videos = Video.find :all
+  end
+
+  def new
+    @video = Video.new
+  end
+
+  def create
+    @video = Video.new(params[:video])
+    if @video.save
+      @video.convert
+      flash[:notice] = 'Video has been uploaded'
+      redirect_to :action => 'index'
+    else
+      render :action => 'new'
+    end
+  end
+
+  def show
+    @video = Video.find(params[:id])
+  end
+  
+  def delete
+    @video = Video.find(params[:id])
+    @video.destroy
+    redirect_to :action => 'index'
+  end
+end
+
+
+
+When working on the controller, I came across a feature of attachment_fu: when you change the filename of an attachment, the old file automatically gets moved to whatever the new filename is. Since I am creating a new file and changing the filename attribute of the video the reflect that, I don't need this on. The skip_filter :rename_file takes care of it. In the create method, notice that if the video save is true, @video.convert gets called, which convert the video to .flv.
+
+
+Views
+
+
+Create the file /app/views/layouts/application.html.erb and put this in it:
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+
+  <head>
+    <title>Video Tutorial</title>
+      <%= stylesheet_link_tag 'style' %>
+    <%= javascript_include_tag 'flowplayer' %>   
+  </head>
+
+  <body>
+    <h1>Video Tutorial</h1>
+    
+    <% flash.each do |key,value| %>
+
+      <div id="flash" class="flash_<%= key %>" >
+        <span class="message"><%= value %></span>
+      </div>
+
+    <% end -%>
+
+    <%= yield :layout %>
+
+  </body>
+
+</html>
+
+
+
+Now for our index view (/app/views/videos/index.html.erb)
+
+
+
+<h2>Videos</h2><br />
+
+<%= link_to 'New Video', new_video_url %><br />
+<% for video in @videos do %>
+  <p><%= link_to video.title, video %></p>
+<% end %>
+
+
+
+/app/views/videos/new.html.erb:
+
+
+
+<h2>New Video</h2><br />
+
+<% form_for(@video, :html => { :multipart => true }) do |f| %>
+  <%= f.error_messages %>
+  <table>
+    <tr>
+      <td><%= f.label :title %>: </td><td><%= f.text_field :title %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :description %>: </td><td><%= f.text_area :description %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :video %>: </td><td><%= f.file_field :uploaded_data %></td>
+    </tr>    
+    <tr><td><%= f.submit 'Submit' %> - <%= link_to 'Back', videos_path %></td></tr>
+  </table>
+
+<% end %>
+
+
+
+This is the upload form. Notice I used f.file_field :uploaded_data...this is for attachment_fu to work. Next is /app/views/videos/show.html.erb:
+
+
+
+<h1><%= @video.title %></h1>
+<p><%= @video.description %></p>
+
+  <a  
+    href="<%= @video.public_filename %>"  
+    style="display:block;width:400px;height:300px"  
+    id="player"> 
+  </a> 
+   
+  <!-- this will install flowplayer inside previous A- tag. -->
+  <script>
+   flowplayer("player", "/flowplayer/flowplayer-3.0.3.swf");
+  </script>
+ 
+
+
+
+And that should do it. ./script/server and try uploading a movie file and see if it works. Also, you could probably mess around some with the call to ffmpeg and increase video quality. There are some good posts if you search for 'ffmpeg' over at the FlowPlayer Forums, and if you purchase a commercial license for the player, you can remove the advertising and get some new features, as well as support. Thanks for reading!
