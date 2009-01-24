@@ -1,0 +1,7 @@
+<h2>Videos</h2><br />
+
+<%= link_to 'New Video', new_video_url %><br />
+<% for video in @videos do %>
+  <p><%= link_to video.title, video %></p>
+<% end %>
+

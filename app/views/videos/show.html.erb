@@ -1,0 +1,14 @@
+<h1><%= @video.title %></h1>
+<p><%= @video.description %></p>
+
+		<a  
+			 href="<%= @video.public_filename %>"  
+			 style="display:block;width:400px;height:300px"  
+			 id="player"> 
+		</a> 
+	  
+		<!-- this will install flowplayer inside previous A- tag. -->
+		<script>
+			flowplayer("player", "/flowplayer/flowplayer-3.0.3.swf");
+		</script>
+

@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+
+  <head>
+    <title>Video Tutorial</title>
+      <%= stylesheet_link_tag 'style' %>
+
+  		<%= javascript_include_tag 'flowplayer' %>   
+  </head>
+
+  <body>
+    <h1>Video Tutorial</h1>
+    
+    <% flash.each do |key,value| %>
+
+      <div id="flash" class="flash_<%= key %>" >
+        <span class="message"><%= value %></span>
+      </div>
+
+    <% end -%>
+
+    <%= yield :layout %>
+
+  </body>
+
+</html>
+
