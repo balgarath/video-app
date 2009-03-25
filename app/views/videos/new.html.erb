@@ -10,6 +10,9 @@
       <td><%= f.label :description %>: </td><td><%= f.text_area :description %></td>
     </tr>
     <tr>
+    	<td><%= f.label :tags %>: </td><td><%= f.text_field :tag_list %></td>
+    </tr>
+    <tr>
       <td><%= f.label :video %>: </td><td><%= f.file_field :uploaded_data %></td>
     </tr>    
     <tr><td><%= f.submit 'Submit' %> - <%= link_to 'Back', videos_path %></td></tr>

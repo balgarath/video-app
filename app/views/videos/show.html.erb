@@ -1,14 +1,36 @@
-<h1><%= @video.title %></h1>
+<h1><%= @video.title %></h1><br />
+<p class = "tags">Tagged with: <span><%= @video.tag_list %></span></p>
+	<% if @video.state == "converted" %>
+		<p id = "video">
+			<a  
+				 href="<%= @video.public_filename %>"  
+				 style="display:block;width:720px;height:480px"  
+				 id="player"> 
+			</a> 
+		  
+			<!-- this will install flowplayer inside previous A- tag. -->
+			<script>
+				flowplayer("player", "/flowplayer/flowplayer-3.0.3.swf");
+			</script>
+		</p>
+	<% else %>
+		<% if @video.state == "error" %>
+			<h2>Error Converting Video, it will be removed shortly</h2>	
+		<% else %>
+			<h2>Video is being converted, check back in a few minutes</h2>		
+		<% end %>
+
+	<% end %>
 <p><%= @video.description %></p>
 
-		<a  
-			 href="<%= @video.public_filename %>"  
-			 style="display:block;width:400px;height:300px"  
-			 id="player"> 
-		</a> 
-	  
-		<!-- this will install flowplayer inside previous A- tag. -->
-		<script>
-			flowplayer("player", "/flowplayer/flowplayer-3.0.3.swf");
-		</script>
+<div id = "video_replies">
+	<%= render :partial => 'reply' %>
+	
+	<% for reply in @video.replies do %>
+		<div class = "reply">
+			<%= reply.body %>
+		</div>
+	<% end %>
+</div>
 
+	

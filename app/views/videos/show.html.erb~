@@ -1,2 +1,29 @@
-<h1>Videos#show</h1>
-<p>Find me in app/views/videos/show.html.erb</p>
+<h1><%= @video.title %></h1><br />
+<p class = "tags">Tagged with: <span><%= @video.tag_list %></span></p>
+	<% if @video.state == "converted" %>
+		<p id = "video">
+			<a  
+				 href="<%= @video.public_filename %>"  
+				 style="display:block;width:720px;height:480px"  
+				 id="player"> 
+			</a> 
+		  
+			<!-- this will install flowplayer inside previous A- tag. -->
+			<script>
+				flowplayer("player", "/flowplayer/flowplayer-3.0.3.swf");
+			</script>
+		</p>
+	<% else %>
+		<% if @video.state == "error" %>
+			<h2>Error Converting Video, it will be removed shortly</h2>	
+		<% else %>
+			<h2>Video is being converted, check back in a few minutes</h2>		
+		<% end %>
+
+	<% end %>
+<p><%= @video.description %></p>
+
+<div id = "video_reply">
+	<%= render :partial => 'reply' %>
+</div>
+	

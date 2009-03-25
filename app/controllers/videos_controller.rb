@@ -1,10 +1,7 @@
 class VideosController < ApplicationController
-
-	#turn off attachment_fu's auto file renaming when you change the value of the filename field
-  skip_filter :rename_file
   
   def index
-    @videos = Video.find :all
+    @videos = Video.paginate :page => params[:page], :order => 'created_at DESC', :per_page => 10
   end
 
   def new
@@ -24,6 +21,7 @@ class VideosController < ApplicationController
 
   def show
     @video = Video.find(params[:id])
+    @reply = VideoReply.new
   end
   
   def delete

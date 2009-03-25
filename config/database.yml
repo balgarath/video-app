@@ -17,7 +17,7 @@
 development:
   adapter: mysql
   encoding: utf8
-  database: videoapp_development
+  database: class_videoapp_development
   pool: 5
   username: root
   password:
@@ -38,7 +38,7 @@ test:
 production:
   adapter: mysql
   encoding: utf8
-  database: videoapp_production
+  database: class_videoapp_production
   pool: 5
   username: root
   password: 

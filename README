@@ -1,3 +1,7 @@
+ffmpeg to mp4 command:
+
+ffmpeg -i baseball.demo.avi -acodec libfaac -ab 128k -ar 44100 -s 704x400 -r 20 -vcodec libx264 -b 256000 -cmp +chroma -partitions +parti4x4+partp8x8+partb8x8 -me_method umh -subq 5 -trellis 1 -refs 2 -bf 1 -coder 1 -me_range 16 -g 300 -keyint_min 25 -sc_threshold 40 -i_qfactor 0.71 -bt 256000 -maxrate 4M -bufsize 4M -rc_eq 'blurCplx^(1-qComp)' -qcomp 0.6 -qmin 10 -qmax 51 -qdiff 4 -level 21 test.mp4
+
 Flash Video Tutorial with Rails, ffmpeg, FlowPlayer, and attachment_fu
 
 Quick Tutorial today to get a simple Video Model setup and going with Flowplayer today. We want to be able to upload videos and convert them to flash .flv files. For this I'll be using ffmpeg. Other plugins in this tutorial include acts_as_state_machine and Rick Olsen's attachment_fu. Lets get started!

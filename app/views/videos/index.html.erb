@@ -1,7 +1,18 @@
-<h2>Videos</h2><br />
+<p><h2>Videos</h2></p><br />
+<%= will_paginate @videos %>
+	<div class = "video_container">
+		<% for video in @videos do %>
 
-<%= link_to 'New Video', new_video_url %><br />
-<% for video in @videos do %>
-  <p><%= link_to video.title, video %></p>
-<% end %>
+		  <a href = "<%= video_url(video) %>" class = "video_thumb">
+			  
+		  		<%= video.thumbnail ? image_tag(video.thumbnail.public_filename) : "No Thumbnail Available" %>
+		  		<p><%= video.title %></p>
+		  	
+		 	</a>
+		<% end %>
+		.
+	</div><!-- /video_container -->
+		<%= will_paginate @videos, :class => "pagination page-wide" %>
+
+	<br />
 

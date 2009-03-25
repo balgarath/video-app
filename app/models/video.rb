@@ -1,8 +1,16 @@
 class Video < ActiveRecord::Base
+	
+	acts_as_taggable
+	
+  belongs_to :thumbnail
+	#belongs_to :user
+	has_many :replies, :class_name => 'VideoReply'
+  
+  before_create :save_thumbnail
+
 	has_attachment :content_type => :video, 
                  :storage => :file_system, 
                  :max_size => 300.megabytes
-
 
   #acts as state machine plugin
   acts_as_state_machine :initial => :pending
@@ -23,18 +31,34 @@ class Video < ActiveRecord::Base
     transitions :from => :converting, :to => :error
   end
   
+	def rename_file
+		true
+	end
 
   # This method is called from the controller and takes care of the converting
   def convert
     self.convert!
-    success = system(convert_command)
-    #logger.debug 'Returned: ' + success.to_s
-    if success && $?.exitstatus == 0
-      self.converted!
-    else
-      self.failure!
-    end
+
+		#spawn a new thread to handle conversion
+		spawn do
+
+	    success = system(convert_command)
+	    logger.debug 'Converting File: ' + success.to_s
+	    if success && $?.exitstatus == 0
+	      self.converted!
+	    else
+	      self.failure!
+	    end
+		end #spawn thread
   end
+
+  def save_thumbnail
+	    logger.info "Saving thumbnail of Video..."
+	    t = Thumbnail.create!(self.temp_path)
+	    self.thumbnail = t
+	    t
+  end
+
 
   protected
   
@@ -45,7 +69,7 @@ class Video < ActiveRecord::Base
 
 		#build the command to execute ffmpeg
     command = <<-end_command
-     ffmpeg -i #{ RAILS_ROOT + '/public' + public_filename }  -ar 22050 -ab 32 -acodec mp3 -s 480x360 -vcodec flv -r 25 -qscale 8 -f flv -y #{ RAILS_ROOT + '/public' + public_filename + flv }
+     ffmpeg -i #{ RAILS_ROOT + '/public' + public_filename } -ar 22050 -s 720x480 -f flv -y #{ RAILS_ROOT + '/public' + public_filename + flv }
       
     end_command
     

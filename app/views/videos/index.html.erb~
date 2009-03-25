@@ -1,2 +1,18 @@
-<h1>Videos#index</h1>
-<p>Find me in app/views/videos/index.html.erb</p>
+<p><h2>Videos</h2></p><br />
+<%= will_paginate @videos %>
+	<div class = "video_container">
+		<% for video in @videos do %>
+
+		  <a href = "<%= video_url(video) %>" class = "video_thumb">
+			  
+		  		<%= video.thumbnail ? image_tag(video.thumbnail.public_filename) : "No Thumbnail Available" %>
+		  		<p><%= video.title %></p>
+		  	
+		 	</a>
+		<% end %>
+		<%= will_paginate @videos, :class => "pagination page-wide" %>
+
+	</div><!-- /video_container -->
+
+	<br />
+

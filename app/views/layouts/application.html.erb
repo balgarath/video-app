@@ -3,25 +3,42 @@
 <html>
 
   <head>
-    <title>Video Tutorial</title>
+    <title>Video App</title>
       <%= stylesheet_link_tag 'style' %>
 
-  		<%= javascript_include_tag 'flowplayer' %>   
+  		<%= javascript_include_tag 'flowplayer', 'jquery' %>   
   </head>
 
   <body>
-    <h1>Video Tutorial</h1>
+  	<div id = "header">
+  		<input id = "search" type = "text" value = "Search"/>
+  		<div id = "logo"><a href = "/">video_app</a></div>
+  	</div>
+
     
-    <% flash.each do |key,value| %>
+    <div id = "body">
+    	<div id = "sidebar">
+	    	<%= link_to 'New Video', new_video_url, :class => 'new' %><br /><br />
+			  <% tag_cloud @tag_cloud, %w(css1 css2 css3 css4) do |tag, css_class| %>
+			    <%= link_to tag.name, '/tags/'  + tag.name , :class => css_class %>
+			  <% end %>
+	    	
+    	</div>
+    	
+    	<div id = "main"
+		    <% flash.each do |key,value| %>
 
-      <div id="flash" class="flash_<%= key %>" >
-        <span class="message"><%= value %></span>
-      </div>
+		      <div id="flash" class="flash_<%= key %>" >
+		        <span class="message"><%= value %></span>
+		      </div>
 
-    <% end -%>
+		    <% end -%>
 
-    <%= yield :layout %>
-
+		    <%= yield :layout %>
+				<div class = "clearing" /> 
+			</div><!-- /main -->
+		</div><!-- /#body -->
+		<div id = "footer">Developer by <a href = "http://ralphedge.com">Ralph Edge</a></div>
   </body>
 
 </html>
