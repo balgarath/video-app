@@ -1,6 +1,8 @@
 html
 {
 	height: 100%;
+	margin: 0;
+	padding: 0;
 }
 
 body 
@@ -10,6 +12,7 @@ body
 	margin: 0;
 	padding: 0;
 	height: 100%;
+	min-width: 750px;
 }
 
 #page {
@@ -109,16 +112,14 @@ h2 {
 
 #sidebar
 {
-	background-color: #aaaaaa;
+	background: #aaaaaa none repeat scroll 0 0;
 	width: 250px;
 	float: left;
 	border-right: 3px solid #5555a5;
-	
-	padding: 15px 0 15px 0;
+	border-bottom: 3px solid #5555a5;
+	margin-left: -100%;
 	text-align: center;
-	height: 160%;
-	
-	
+	height: 100%;
 	
 }
 
@@ -143,11 +144,18 @@ h2 {
 
 #main
 {
+	float: left;
+	width: 100%;
+}
 
-	margin:auto;
-	
-	padding-top: 10px;
-	margin-left: 180px;
+#main_col
+{
+	margin-left: 250px;
+}
+
+.innertube
+{
+	margin: 0 10px 10px;
 }
 
 #video
@@ -220,7 +228,12 @@ a:hover.video_thumb
 	text-align: center;
 	margin: auto;
 	width: 400px;
-	
+	font-size: 80%;	
+}
+
+.pagination a 
+{
+	color: 
 }
 
 .page-wide
@@ -231,6 +244,8 @@ a:hover.video_thumb
 	
 	margin: auto;
 	float: right;
+	margin-top: 75px;
+	
 }
 
 .tags
@@ -245,6 +260,13 @@ a:hover.video_thumb
 	height: 60px;
 	background-color: black;
 	border-top: 3px solid #5555a5;
+	clear: left;
+	padding-top:20px;
+	padding-bottom:10px;
+	text-align: center;
+	font-weight: bold;
+	color: #c8c8c8;
+	
 }
 
   .css1 { font-size: 0.4em; }

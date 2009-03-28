@@ -1,0 +1,6 @@
+<% form_for @reply do |f| %>
+	<%= f.error_messages %>
+	<%= f.label :body  %>
+	<%= f.text_area :body %>
+	<%= f.submit 'Submit' %>
+<% end %>

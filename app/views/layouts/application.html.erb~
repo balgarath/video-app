@@ -10,34 +10,45 @@
   </head>
 
   <body>
-  	<div id = "header">
-  		<input id = "search" type = "text" value = "Search"/>
-  		<div id = "logo"><a href = "/">video_app</a></div>
-  	</div>
 
     
     <div id = "body">
-    	<div id = "sidebar">
-	    	<%= link_to 'New Video', new_video_url, :class => 'new' %><br /><br />
-			  <% tag_cloud @tag_cloud, %w(css1 css2 css3 css4) do |tag, css_class| %>
-			    <%= link_to tag.name, '/tags/'  + tag.name , :class => css_class %>
-			  <% end %>
-	    	
-    	</div>
+	  	<div id = "header">
+	  		<input id = "search" type = "text" value = "Search"/>
+	  		<div id = "logo"><a href = "/">video_app</a></div>
+	  	</div>
+
     	
-    	<div id = "main"
-		    <% flash.each do |key,value| %>
+    	<div id = "main">
+				<div id = "main_col">
+				  <div class = "innertube">  
+				    <% flash.each do |key,value| %>
 
-		      <div id="flash" class="flash_<%= key %>" >
-		        <span class="message"><%= value %></span>
-		      </div>
+				      <div id="flash" class="flash_<%= key %>" >
+				        <span class="message"><%= value %></span>
+				      </div>
 
-		    <% end -%>
+				    <% end -%>
 
-		    <%= yield :layout %>
-				<div class = "clearing" /> 
+				    <%= yield :layout %>
+						
+					</div><!-- /innertube -->
+	
+				</div><!-- /main_col -->
 			</div><!-- /main -->
+
+    	<div id = "sidebar">
+	    	<div class = "innertube">	
+		    	<%= link_to 'New Video', new_video_url, :class => 'new' %><br /><br />
+				  <% tag_cloud @tag_cloud, %w(css1 css2 css3 css4) do |tag, css_class| %>
+				    <%= link_to tag.name, '/tags/'  + tag.name , :class => css_class %>
+				  <% end %>
+		    </div>	
+    	</div>
+
+			<div id = "footer">Created by: <a href = "http://ralphedge.com">Ralph Edge</a>, 2009</div>
 		</div><!-- /#body -->
+		
   </body>
 
 </html>

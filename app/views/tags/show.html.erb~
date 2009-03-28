@@ -1,0 +1,11 @@
+<h1 class = "tag">Tag: <%= @tag.name.capitalize %></h1>
+
+<% for video in @videos do %>
+  <div class = "video_thumb">
+  	<a href = "<%= video_url(video) %>">
+  		<%= video.thumbnail ? image_tag(video.thumbnail.public_filename) : "No Thumbnail Available" %>
+  		<p><%= video.title %></p>
+  		<p class = "tags">Tagged with: <span><%= video.tag_list %></span></p>
+  	</a>
+ 	</div>
+<% end %>

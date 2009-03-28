@@ -1,0 +1,4 @@
+<h1>Tag List</h1><br />
+<% for t in @tags do %>
+	<%= link_to t.name.capitalize, tag_path(t.name) %><br />
+<% end %>
