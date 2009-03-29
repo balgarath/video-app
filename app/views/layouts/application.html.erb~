@@ -39,14 +39,31 @@
 
     	<div id = "sidebar">
 	    	<div class = "innertube">	
-		    	<%= link_to 'New Video', new_video_url, :class => 'new' %><br /><br />
-				  <% tag_cloud @tag_cloud, %w(css1 css2 css3 css4) do |tag, css_class| %>
-				    <%= link_to tag.name, '/tags/'  + tag.name , :class => css_class %>
-				  <% end %>
-		    </div>	
-    	</div>
+				  <%= link_to 'New Video', new_video_url, :class => 'new' %><br /><br />
+					<% if !current_user %>
+					  <%= link_to "Register", new_account_path %><br />
+					  <%= link_to "Log In", new_user_session_path %><br />
+					<% else %>
+					  <%= link_to "My Account", account_path %><br />
+					  <%= link_to "Logout", user_session_path, :method => :delete, :confirm => "Are you sure you want to logout?" %>
+					<% end %>
 
-			<div id = "footer">Created by: <a href = "http://ralphedge.com">Ralph Edge</a>, 2009</div>
+				  <p><%= pluralize User.logged_in.count, "user" %> currently logged in.</p><br /> <!-- This based on last_request_at, if they were active < 10 minutes they are logged in -->
+				  <div id = "tagcloud">
+				  	<% tag_cloud @tag_cloud, %w(css1 css2 css3 css4) do |tag, css_class| %>
+					    <%= link_to tag.name, '/tags/'  + tag.name , :class => css_class %>
+					  <% end %>
+					<div class = "clear-right" />
+					</div><!-- /tagcloud -->
+
+		    </div>	<!-- /innertube -->
+    	</div><!-- /sidebar -->
+
+			<div id = "footer">
+				Created by: <a href = "http://ralphedge.com">Ralph Edge</a>, 2009<br />
+				Blog: <a href = "http://railsonedge.blogspot.com" target = "_blank">http://railsonedge.blogspot.com</a><br />
+				Portfolio: <a href = "http://www.ralphedge.com/" target = "_new">http://www.ralphedge.com</a>
+			</div>
 		</div><!-- /#body -->
 		
   </body>

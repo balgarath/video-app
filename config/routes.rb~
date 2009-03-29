@@ -1,8 +1,12 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :users
+
 
 	map.root :controller => 'videos'
+	map.resource :user_session
 	map.resources :videos
 	map.resources :tags
+	map.resources :video_replies
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:

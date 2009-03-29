@@ -1,6 +1,9 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :users
+	map.resource :account, :controller => "users"
 
 	map.root :controller => 'videos'
+	map.resource :user_session
 	map.resources :videos
 	map.resources :tags
 	map.resources :video_replies

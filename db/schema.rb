@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090325155759) do
+ActiveRecord::Schema.define(:version => 20090328235654) do
 
   create_table "taggings", :force => true do |t|
     t.integer  "tag_id"
@@ -29,6 +29,21 @@ ActiveRecord::Schema.define(:version => 20090325155759) do
     t.string   "content_type"
     t.integer  "size"
     t.string   "filename"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "login"
+    t.string   "crypted_password"
+    t.string   "password_salt"
+    t.string   "persistence_token"
+    t.integer  "login_count"
+    t.datetime "last_request_at"
+    t.datetime "last_login_at"
+    t.datetime "current_login_at"
+    t.string   "last_login_ip"
+    t.string   "current_login_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

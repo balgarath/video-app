@@ -1,5 +1,7 @@
 class VideosController < ApplicationController
   
+    before_filter :require_user, :only => [:new, :delete, :create]
+  
   def index
     @videos = Video.paginate :page => params[:page], :order => 'created_at DESC', :per_page => 10
   end

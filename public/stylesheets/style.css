@@ -30,7 +30,7 @@ h1, h2 {
 	letter-spacing:-1px;
 	color:#2D5AC3;
 	font-weight:normal;		
-	margin-bottom:-10px;
+	
 }
 
 h1 {
@@ -128,7 +128,6 @@ h2 {
 	color: #5050ff;
 	font-weight: bold;
 	text-align: right;
-	padding: 15px;
 }
 
 #sidebar .new
@@ -248,11 +247,6 @@ a:hover.video_thumb
 	
 }
 
-.tags
-{
-	color: #AA4444;
-	font-size: 80%;
-}
 
 #footer
 {
@@ -269,6 +263,25 @@ a:hover.video_thumb
 	
 }
 
+input
+{
+	height: 30px;
+	border: 3px solid gray;
+	width: 300px;
+	font-size: 120%;
+	
+}
+
+.tags
+{
+	color: #AA4444;
+	font-size: 80%;
+}
+
+#tagcloud a
+{
+	padding: 15px;
+}
   .css1 { font-size: 0.4em; }
   .css2 { font-size: 0.8em; }
   .css3 { font-size: 1.3em; }

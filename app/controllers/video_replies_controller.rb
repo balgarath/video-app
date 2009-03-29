@@ -1,5 +1,5 @@
 class VideoRepliesController < ApplicationController
-
+  before_filter :require_user, :only => [:create, :delete]
 	def create
 		@reply = VideoReply.new(params[:video_reply])
 		if @reply.save
