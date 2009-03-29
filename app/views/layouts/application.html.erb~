@@ -53,7 +53,7 @@
 				  	<% tag_cloud @tag_cloud, %w(css1 css2 css3 css4) do |tag, css_class| %>
 					    <%= link_to tag.name, '/tags/'  + tag.name , :class => css_class %>
 					  <% end %>
-					<div class = "clear-right" />
+
 					</div><!-- /tagcloud -->
 
 		    </div>	<!-- /innertube -->

@@ -7,7 +7,7 @@
 			  
 		  		<%= video.thumbnail ? image_tag(video.thumbnail.public_filename) : "No Thumbnail Available" %>
 		  		<p><%= video.title %></p>
-		  	
+					<p>Uploaded By: <%= video.user.login %></p>		  	
 		 	</a>
 
 		<% end %>

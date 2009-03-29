@@ -3,7 +3,7 @@ class Video < ActiveRecord::Base
 	acts_as_taggable
 	
   belongs_to :thumbnail
-	#belongs_to :user
+	belongs_to :user
 	has_many :replies, :class_name => 'VideoReply'
   
   before_create :save_thumbnail

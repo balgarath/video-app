@@ -5,6 +5,7 @@
   	<a href = "<%= video_url(video) %>">
   		<%= video.thumbnail ? image_tag(video.thumbnail.public_filename) : "No Thumbnail Available" %>
   		<p><%= video.title %></p>
+  		<p>Uploaded By: <%= video.user.login %></p>
   		<p class = "tags">Tagged with: <span><%= video.tag_list %></span></p>
   	</a>
  	</div>

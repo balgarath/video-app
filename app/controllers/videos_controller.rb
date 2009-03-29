@@ -12,6 +12,7 @@ class VideosController < ApplicationController
 
   def create
     @video = Video.new(params[:video])
+    @video.user = @current_user
     if @video.save
       @video.convert
       flash[:notice] = 'Video has been uploaded'

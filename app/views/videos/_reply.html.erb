@@ -1,6 +1,7 @@
+<h1>Reply</h1>
 <% form_for @reply do |f| %>
 	<%= f.error_messages %>
-	<%= f.label :body  %>
-	<%= f.text_area :body %>
-	<%= f.submit 'Submit' %>
+	<%= f.hidden_field :video_id, :value => @video.id %>
+	<%= f.text_area :body, :rows => '7', :cols => '52' %><br /><br />
+	<%= f.submit 'Submit', :class => 'submit' %>
 <% end %>

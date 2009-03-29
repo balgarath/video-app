@@ -2,6 +2,7 @@ class VideoRepliesController < ApplicationController
   before_filter :require_user, :only => [:create, :delete]
 	def create
 		@reply = VideoReply.new(params[:video_reply])
+		@reply.user = @current_user
 		if @reply.save
 
       flash[:notice] = 'Reply Submitted Successfully'
