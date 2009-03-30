@@ -113,10 +113,10 @@ h2 {
 
 #sidebar
 {
-	background: #aaaaaa none repeat scroll 0 0;
-	background-image: url(/images/sidebar.png);
+	background: #d9d9ff none repeat scroll 0 0;
 	width: 250px;
 	float: left;
+	padding-top: 20px;
 	border-right: 3px solid #5555a5;
 	border-bottom: 3px solid #5555a5;
 	margin-left: -100%;
