@@ -62,6 +62,9 @@ h2 {
 #logo a
 {
 	color: #c8c8c8;
+	color: #ff5555;
+	width: 223px;
+	height: 33px;
 	font-weight: bold;
 	font-size: 25px;
 	text-decoration: none;	
@@ -75,6 +78,7 @@ h2 {
 	background-color: #8c8cfc;
 	border: 2px solid #222222;
 	color: #5050ff;
+	color: red;
 }
 
 #search
