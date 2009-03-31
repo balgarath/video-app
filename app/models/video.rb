@@ -59,7 +59,10 @@ class Video < ActiveRecord::Base
 	    t
   end
 
-
+  def url=(value)
+    self.uploaded_data = UrlUpload.new(value)
+  end
+  
   protected
   
   def convert_command

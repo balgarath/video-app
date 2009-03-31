@@ -295,6 +295,14 @@ input
 	
 }
 
+textarea.text
+{
+	border: 3px solid gray;
+	width: 300px;
+	height: 120px;
+	font-size: 120%;
+}
+
 input.submit
 {
 	width: 200px;
@@ -312,6 +320,13 @@ input.submit:hover
 	border: 3px solid #777777;
 	color: black;
 }
+
+input.file
+{
+  width: 300px;
+}
+
+
 
 label
 {
@@ -331,6 +346,18 @@ label
 	font-weight: bold;
 }
 
+.gray { color: gray; }
+
+
+#new_video table
+{
+  width: 400px;
+}
+
+.td-left
+{
+  text-align: right;
+}
 
 .tags
 {
@@ -368,3 +395,4 @@ label
 {
 	color: red;
 }
+

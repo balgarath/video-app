@@ -5,7 +5,9 @@ class Thumbnail < ActiveRecord::Base
   
   def self.create!(vpath)
 	    tpath = vpath + ".jpg"
-	    system "ffmpeg -i #{vpath} -ss 20 -s 150x100 -vframes 1 -f image2 -an #{tpath}"
+	    command = "ffmpeg -i #{vpath} -ss 20 -s 150x100 -vframes 1 -f image2 -an #{tpath}"
+	    logger.debug "Converting thumbnail...command: " + command
+	    system(command)
 	    t = Thumbnail.new(:filename => File.basename(tpath), :content_type => 'image/jpeg', :temp_path => tpath)
 	    t.save ? t : false		
   end

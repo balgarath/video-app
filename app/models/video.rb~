@@ -40,7 +40,7 @@ class Video < ActiveRecord::Base
     self.convert!
 
 		#spawn a new thread to handle conversion
-		spawn do
+		#spawn do
 
 	    success = system(convert_command)
 	    logger.debug 'Converting File: ' + success.to_s
@@ -49,7 +49,7 @@ class Video < ActiveRecord::Base
 	    else
 	      self.failure!
 	    end
-		end #spawn thread
+		#end #spawn thread
   end
 
   def save_thumbnail
@@ -59,7 +59,10 @@ class Video < ActiveRecord::Base
 	    t
   end
 
-
+  def url=(value)
+    self.uploaded_data = UrlUpload.new(value)
+  end
+  
   protected
   
   def convert_command
