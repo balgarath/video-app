@@ -41,5 +41,5 @@ production:
   database: class_videoapp_production
   pool: 5
   username: root
-  password: 
+  password: 004399
   socket: /var/run/mysqld/mysqld.sock
