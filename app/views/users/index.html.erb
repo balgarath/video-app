@@ -3,9 +3,6 @@
 <table>
   <tr>
     <th>Login</th>
-    <th>Crypted password</th>
-    <th>Password salt</th>
-    <th>Persistence token</th>
     <th>Login count</th>
     <th>Last request at</th>
     <th>Last login at</th>
@@ -17,9 +14,6 @@
 <% for user in @users %>
   <tr>
     <td><%=h user.login %></td>
-    <td><%=h user.crypted_password %></td>
-    <td><%=h user.password_salt %></td>
-    <td><%=h user.persistence_token %></td>
     <td><%=h user.login_count %></td>
     <td><%=h user.last_request_at %></td>
     <td><%=h user.last_login_at %></td>
@@ -27,12 +21,9 @@
     <td><%=h user.last_login_ip %></td>
     <td><%=h user.current_login_ip %></td>
     <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New user', new_user_path %>

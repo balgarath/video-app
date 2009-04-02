@@ -5,7 +5,7 @@ require 'scrubyt'
 Scrubyt.logger = Scrubyt::Logger.new
 
 data = Scrubyt::Extractor.define do
-  fetch "http://railscasts.com/episodes/154-polymorphic-association"
+  fetch "http://railscasts.com/episodes/155-beginning-with-cucumber"
   video "//div[@class='main']" do
     title '/h2'
     description '/div[@class="description"]'
@@ -27,10 +27,13 @@ file = UrlUpload.new(data[:url])
 v = Video.create(:filename => file.original_filename, 
                  :content_type => file.content_type, 
                  :temp_path => file.path, 
-                 :user_id => User.find_by_login('rledge21'),
+                 :user_id => User.find_by_login('rledge21').id,
                  :title => data[:title],
-                 :description => data[:description],
+                 :description => 'Original Video 
+from: ' + data[:url] + "<br />" + data[:description],
                  :tag_list => data[:tag])
 
 v.convert
       
+      ####################FOR FUTURE REFERENCE#####################
+ #v = Video.new(:filename => file.original_filename, :content_type => file.content_type, :temp_path => file.path, :user_id => User.find_by_login('rledge21').id, :title => "Mt. High 2009: Faultline's March Update",:description => "original video from: http://mackdawgproductions.com<br />Springtime is in full effect and the Faultline terrain park is firing. If this video doesn't motivate you to get off your butt and head out to Mt. High, well... ", :tag_list => "snowboard, mt high")      

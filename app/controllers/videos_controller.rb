@@ -11,6 +11,7 @@ class VideosController < ApplicationController
   end
 
   def create
+
     @video = Video.new(params[:video])
     @video.user = @current_user
     if @video.save

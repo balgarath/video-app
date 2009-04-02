@@ -6,7 +6,8 @@ class UrlUpload
     "application/x-flash-video" => ["flv"],
     "video/mpeg" => ["mp2", "mpeg", "mpg", "mp4"],
     "video/quicktime" => ["mov", "qt"],
-    "video/x-msvideo" => ["avi"]    
+    "video/x-msvideo" => ["avi"],
+    "video/x-flv" => ['flv']
   }
   
   require 'open-uri'  

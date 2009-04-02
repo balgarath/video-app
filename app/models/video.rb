@@ -12,6 +12,8 @@ class Video < ActiveRecord::Base
                  :storage => :file_system, 
                  :max_size => 300.megabytes
 
+  attr_accessor :url
+
   #acts as state machine plugin
   acts_as_state_machine :initial => :pending
   state :pending
@@ -38,18 +40,22 @@ class Video < ActiveRecord::Base
   # This method is called from the controller and takes care of the converting
   def convert
     self.convert!
+    
+    if self.content_type == "video/x-flv" || self.content_type == "application/x-flash-video"
+      self.converted!    
+    else
+  		#spawn a new thread to handle conversion
+  		spawn do
 
-		#spawn a new thread to handle conversion
-		spawn do
-
-	    success = system(convert_command)
-	    logger.debug 'Converting File: ' + success.to_s
-	    if success && $?.exitstatus == 0
-	      self.converted!
-	    else
-	      self.failure!
-	    end
-		end #spawn thread
+  	    success = system(convert_command)
+  	    logger.info 'Converting File: ' + success.to_s
+  	    if success && $?.exitstatus == 0
+  	      self.converted!
+  	    else
+  	      self.failure!
+  	    end
+  		end #spawn thread
+    end #if else
   end
 
   def save_thumbnail
@@ -60,7 +66,8 @@ class Video < ActiveRecord::Base
   end
 
   def url=(value)
-    self.uploaded_data = UrlUpload.new(value)
+    #file = UrlUpload.new(value)
+    #self.uploaded_data = file
   end
   
   protected
@@ -76,13 +83,13 @@ class Video < ActiveRecord::Base
       
     end_command
     
-    logger.debug "Converting video...command: " + command
+    logger.info "Converting video...command: " + command
     command
   end
 
   # This updates the stored filename with the new flash video file
   def set_new_filename
-    update_attribute(:filename, "#{filename}.#{id}.flv")
+    update_attribute(:filename, "#{filename}.#{id}.flv") unless self.filename[-3..-1] == "flv"
     update_attribute(:content_type, "application/x-flash-video")
   end
 
