@@ -125,7 +125,7 @@ h2 {
 	border-bottom: 3px solid #5555a5;
 	margin-left: -100%;
 	text-align: center;
-	height: 100%;
+	
 	
 }
 
@@ -202,6 +202,7 @@ a {
 	float: left;
 	margin: 5px;
 	width: 200px;
+	height: 188px;
 }
 
 a.video_thumb

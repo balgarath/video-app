@@ -5,7 +5,7 @@ require 'scrubyt'
 Scrubyt.logger = Scrubyt::Logger.new
 
 data = Scrubyt::Extractor.define do
-  fetch "http://railscasts.com/episodes/155-beginning-with-cucumber"
+  fetch "http://railscasts.com/episodes/149-rails-engines"
   video "//div[@class='main']" do
     title '/h2'
     description '/div[@class="description"]'
@@ -28,10 +28,10 @@ v = Video.create(:filename => file.original_filename,
                  :content_type => file.content_type, 
                  :temp_path => file.path, 
                  :user_id => User.find_by_login('rledge21').id,
-                 :title => data[:title],
+                 :title => 'Railscast: ' + data[:title],
                  :description => 'Original Video 
 from: ' + data[:url] + "<br />" + data[:description],
-                 :tag_list => data[:tag])
+                 :tag_list => data[:tag] + ', ruby, rails, railscast')
 
 v.convert
       

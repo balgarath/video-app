@@ -10825,3 +10825,234 @@ Processing VideosController#index (for 68.186.130.40 at 2009-04-02 07:21:42) [GE
 Rendering template within layouts/application
 Rendering videos/index
 Completed in 24ms (View: 20, DB: 0) | 200 OK [http://videoapp.railsonedge.com/]
+
+
+Processing VideosController#index (for 68.186.130.40 at 2009-04-02 23:17:22) [GET]
+  Parameters: {"action"=>"index", "controller"=>"videos"}
+Rendering template within layouts/application
+Rendering videos/index
+Completed in 424ms (View: 408, DB: 0) | 200 OK [http://videoapp.railsonedge.com/]
+
+
+Processing VideosController#index (for 68.186.130.40 at 2009-04-02 23:18:56) [GET]
+  Parameters: {"action"=>"index", "controller"=>"videos"}
+Rendering template within layouts/application
+Rendering videos/index
+Completed in 256ms (View: 236, DB: 0) | 200 OK [http://videoapp.railsonedge.com/]
+
+
+Processing VideosController#index (for 68.186.130.40 at 2009-04-02 23:19:22) [GET]
+  Parameters: {"action"=>"index", "controller"=>"videos"}
+Rendering template within layouts/application
+Rendering videos/index
+Completed in 228ms (View: 208, DB: 0) | 200 OK [http://videoapp.railsonedge.com/]
+
+
+Processing VideosController#index (for 68.186.130.40 at 2009-04-02 23:19:35) [GET]
+  Parameters: {"action"=>"index", "controller"=>"videos"}
+Rendering template within layouts/application
+Rendering videos/index
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://videoapp.railsonedge.com/]
+
+
+Processing VideosController#index (for 68.186.130.40 at 2009-04-02 23:19:41) [GET]
+  Parameters: {"action"=>"index", "controller"=>"videos"}
+Rendering template within layouts/application
+Rendering videos/index
+Completed in 256ms (View: 240, DB: 0) | 200 OK [http://videoapp.railsonedge.com/]
+
+
+Processing VideosController#index (for 68.186.130.40 at 2009-04-02 23:19:43) [GET]
+  Parameters: {"action"=>"index", "controller"=>"videos"}
+Rendering template within layouts/application
+Rendering videos/index
+Completed in 12ms (View: 12, DB: 0) | 200 OK [http://videoapp.railsonedge.com/]
+
+
+Processing VideosController#index (for 68.186.130.40 at 2009-04-02 23:19:45) [GET]
+  Parameters: {"action"=>"index", "controller"=>"videos"}
+Rendering template within layouts/application
+Rendering videos/index
+Completed in 12ms (View: 12, DB: 0) | 200 OK [http://videoapp.railsonedge.com/]
+
+
+Processing VideosController#index (for 68.186.130.40 at 2009-04-02 23:20:56) [GET]
+  Parameters: {"action"=>"index", "controller"=>"videos"}
+Rendering template within layouts/application
+Rendering videos/index
+Completed in 256ms (View: 240, DB: 0) | 200 OK [http://videoapp.railsonedge.com/]
+
+
+Processing VideosController#show (for 68.186.130.40 at 2009-04-02 23:25:38) [GET]
+  Parameters: {"action"=>"show", "id"=>"29", "controller"=>"videos"}
+Rendering template within layouts/application
+Rendering videos/show
+Completed in 508ms (View: 396, DB: 80) | 200 OK [http://videoapp.railsonedge.com/videos/29]
+
+
+Processing TagsController#show (for 68.186.130.40 at 2009-04-02 23:26:24) [GET]
+  Parameters: {"action"=>"show", "id"=>"collision avoidance", "controller"=>"tags"}
+Rendering template within layouts/application
+Rendering tags/show
+Completed in 360ms (View: 80, DB: 160) | 200 OK [http://videoapp.railsonedge.com/tags/collision%20avoidance]
+
+
+Processing VideosController#index (for 68.186.130.40 at 2009-04-02 23:26:33) [GET]
+  Parameters: {"action"=>"index", "controller"=>"videos"}
+Rendering template within layouts/application
+Rendering videos/index
+Completed in 168ms (View: 132, DB: 32) | 200 OK [http://videoapp.railsonedge.com/]
+
+
+Processing VideosController#show (for 68.186.130.40 at 2009-04-02 23:26:39) [GET]
+  Parameters: {"action"=>"show", "id"=>"30", "controller"=>"videos"}
+Rendering template within layouts/application
+Rendering videos/show
+Completed in 76ms (View: 72, DB: 4) | 200 OK [http://videoapp.railsonedge.com/videos/30]
+
+
+Processing VideoRepliesController#create (for 68.186.130.40 at 2009-04-02 23:26:56) [POST]
+  Parameters: {"commit"=>"Submit", "action"=>"create", "authenticity_token"=>"a2c6a5fcf8ed4ae304777dc05041d9783d4394c0", "controller"=>"video_replies", "video_reply"=>{"body"=>"Great Video!", "video_id"=>"30"}}
+Redirected to http://videoapp.railsonedge.com/user_session/new
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 100ms (DB: 12) | 302 Found [http://videoapp.railsonedge.com/video_replies]
+
+
+Processing UserSessionsController#new (for 68.186.130.40 at 2009-04-02 23:26:56) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 48ms (View: 40, DB: 0) | 200 OK [http://videoapp.railsonedge.com/user_session/new]
+
+
+Processing UserSessionsController#create (for 68.186.130.40 at 2009-04-02 23:27:03) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"password"=>"[FILTERED]", "login"=>"rledge21", "remember_me"=>"0"}, "action"=>"create", "authenticity_token"=>"a2c6a5fcf8ed4ae304777dc05041d9783d4394c0", "controller"=>"user_sessions"}
+Cookie set: user_credentials=e00c62a43c9890b5ee29452b11ff6638f9aee4f6dfc90096782f0245cb6c3c7c816ed255be7e36d5527ebdd7c71b0f58de185820be000dcf471b55930fbf302c; path=/
+Redirected to /video_replies
+Completed in 916ms (DB: 100) | 302 Found [http://videoapp.railsonedge.com/user_session]
+
+
+Processing VideoRepliesController#index (for 68.186.130.40 at 2009-04-02 23:27:04) [GET]
+  Parameters: {"action"=>"index", "controller"=>"video_replies"}
+
+
+ActionController::UnknownAction (No action responded to index. Actions: create, delete, and get_tag_cloud):
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `passenger_orig_perform_action'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `passenger_orig_perform_action'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/request_handler.rb:53:in `perform_action'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/request_handler.rb:38:in `orig_process_request'
+    /vendor/plugins/spawn/lib/patches.rb:70:in `process_request'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_request_handler.rb:165:in `main_loop'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/application_spawner.rb:321:in `start_request_handler'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/application_spawner.rb:282:in `handle_spawn_application'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:163:in `safe_fork'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:161:in `fork'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:161:in `safe_fork'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/application_spawner.rb:280:in `handle_spawn_application'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:163:in `safe_fork'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:161:in `fork'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:161:in `safe_fork'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/application_spawner.rb:279:in `handle_spawn_application'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `__send__'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `main_loop'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:168:in `start_synchronously'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:135:in `start'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:112:in `fork'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:112:in `start'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/application_spawner.rb:179:in `start'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/framework_spawner.rb:270:in `handle_spawn_application'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/framework_spawner.rb:263:in `synchronize'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/framework_spawner.rb:263:in `handle_spawn_application'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `__send__'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `main_loop'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:168:in `start_synchronously'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:135:in `start'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:112:in `fork'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:112:in `start'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/framework_spawner.rb:87:in `start'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/spawn_manager.rb:222:in `spawn_rails_application'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/spawn_manager.rb:217:in `synchronize'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/spawn_manager.rb:217:in `spawn_rails_application'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/spawn_manager.rb:126:in `spawn_application'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/spawn_manager.rb:251:in `handle_spawn_application'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `__send__'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `main_loop'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:168:in `start_synchronously'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/bin/passenger-spawn-server:46
+
+Rendering ./public/404.html (404 Not Found)
+
+
+Processing VideosController#index (for 68.186.130.40 at 2009-04-02 23:27:14) [GET]
+  Parameters: {"action"=>"index", "controller"=>"videos"}
+Rendering template within layouts/application
+Rendering videos/index
+Completed in 144ms (View: 144, DB: 0) | 200 OK [http://videoapp.railsonedge.com/]
+
+
+Processing VideosController#show (for 68.186.130.40 at 2009-04-02 23:27:16) [GET]
+  Parameters: {"action"=>"show", "id"=>"30", "controller"=>"videos"}
+Rendering template within layouts/application
+Rendering videos/show
+Completed in 24ms (View: 24, DB: 0) | 200 OK [http://videoapp.railsonedge.com/videos/30]
+
+
+Processing VideoRepliesController#create (for 68.186.130.40 at 2009-04-02 23:27:31) [POST]
+  Parameters: {"commit"=>"Submit", "action"=>"create", "authenticity_token"=>"a2c6a5fcf8ed4ae304777dc05041d9783d4394c0", "controller"=>"video_replies", "video_reply"=>{"body"=>"Great Video!", "video_id"=>"30"}}
+Redirected to #<Video:0x3d04690>
+Completed in 104ms (DB: 100) | 302 Found [http://videoapp.railsonedge.com/video_replies]
+
+
+Processing VideosController#show (for 68.186.130.40 at 2009-04-02 23:27:31) [GET]
+  Parameters: {"action"=>"show", "id"=>"30", "controller"=>"videos"}
+Rendering template within layouts/application
+Rendering videos/show
+Completed in 52ms (View: 48, DB: 0) | 200 OK [http://videoapp.railsonedge.com/videos/30]
+
+
+Processing TagsController#show (for 68.186.130.40 at 2009-04-02 23:28:06) [GET]
+  Parameters: {"action"=>"show", "id"=>"tools", "controller"=>"tags"}
+Rendering template within layouts/application
+Rendering tags/show
+Completed in 128ms (View: 104, DB: 24) | 200 OK [http://videoapp.railsonedge.com/tags/tools]
+
+
+Processing VideosController#index (for 68.186.130.40 at 2009-04-02 23:28:21) [GET]
+  Parameters: {"action"=>"index", "controller"=>"videos"}
+Rendering template within layouts/application
+Rendering videos/index
+Completed in 52ms (View: 28, DB: 0) | 200 OK [http://videoapp.railsonedge.com/]
+
+
+Processing VideosController#show (for 68.186.130.40 at 2009-04-02 23:38:30) [GET]
+  Parameters: {"action"=>"show", "id"=>"30", "controller"=>"videos"}
+Rendering template within layouts/application
+Rendering videos/show
+Completed in 424ms (View: 344, DB: 60) | 200 OK [http://videoapp.railsonedge.com/videos/30]
+
+
+Processing VideosController#index (for 68.186.130.40 at 2009-04-03 01:13:58) [GET]
+  Parameters: {"action"=>"index", "controller"=>"videos"}
+Rendering template within layouts/application
+Rendering videos/index
+Completed in 420ms (View: 404, DB: 4) | 200 OK [http://videoapp.railsonedge.com/]
