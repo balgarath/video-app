@@ -11056,3 +11056,585 @@ Processing VideosController#index (for 68.186.130.40 at 2009-04-03 01:13:58) [GE
 Rendering template within layouts/application
 Rendering videos/index
 Completed in 420ms (View: 404, DB: 4) | 200 OK [http://videoapp.railsonedge.com/]
+
+
+Processing VideosController#index (for 68.186.130.40 at 2009-04-03 03:26:24) [GET]
+  Parameters: {"action"=>"index", "controller"=>"videos"}
+Rendering template within layouts/application
+Rendering videos/index
+Completed in 548ms (View: 440, DB: 88) | 200 OK [http://videoapp.railsonedge.com/]
+
+
+Processing VideosController#show (for 68.186.130.40 at 2009-04-03 03:26:28) [GET]
+  Parameters: {"action"=>"show", "id"=>"32", "controller"=>"videos"}
+Rendering template within layouts/application
+Rendering videos/show
+Completed in 376ms (View: 336, DB: 16) | 200 OK [http://videoapp.railsonedge.com/videos/32]
+
+
+Processing TagsController#show (for 68.186.130.40 at 2009-04-03 03:26:47) [GET]
+  Parameters: {"action"=>"show", "id"=>"railscast", "controller"=>"tags"}
+Rendering template within layouts/application
+Rendering tags/show
+Completed in 128ms (View: 32, DB: 88) | 200 OK [http://videoapp.railsonedge.com/tags/railscast]
+
+
+Processing TagsController#show to 3 (for 68.186.130.40 at 2009-04-03 03:26:52) [GET]
+  Parameters: {"format"=>"3", "action"=>"show", "id"=>"rails-2", "controller"=>"tags"}
+Rendering tags/show
+
+
+ActionView::MissingTemplate (Missing template tags/show.erb in view path /home/rledge21/public_html/videoapp.railsonedge.com/app/views:):
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/template.rb:95:in `find_full_path'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/template.rb:16:in `initialize'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:332:in `new'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:332:in `_unmemoized__pick_template'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/memoizable.rb:70:in `_pick_template'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:256:in `render'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1174:in `render_for_file'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:896:in `render_without_benchmark'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:868:in `render_without_benchmark'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1248:in `default_render'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1254:in `perform_action_without_filters'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `passenger_orig_perform_action'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `passenger_orig_perform_action'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/request_handler.rb:53:in `perform_action'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/request_handler.rb:38:in `orig_process_request'
+    /vendor/plugins/spawn/lib/patches.rb:70:in `process_request'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_request_handler.rb:165:in `main_loop'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/application_spawner.rb:321:in `start_request_handler'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/application_spawner.rb:282:in `handle_spawn_application'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:163:in `safe_fork'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:161:in `fork'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:161:in `safe_fork'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/application_spawner.rb:280:in `handle_spawn_application'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:163:in `safe_fork'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:161:in `fork'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:161:in `safe_fork'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/application_spawner.rb:279:in `handle_spawn_application'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `__send__'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `main_loop'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:168:in `start_synchronously'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:135:in `start'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:112:in `fork'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:112:in `start'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/application_spawner.rb:179:in `start'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/framework_spawner.rb:270:in `handle_spawn_application'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/framework_spawner.rb:263:in `synchronize'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/framework_spawner.rb:263:in `handle_spawn_application'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `__send__'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `main_loop'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:168:in `start_synchronously'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:135:in `start'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:112:in `fork'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:112:in `start'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/framework_spawner.rb:87:in `start'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/spawn_manager.rb:222:in `spawn_rails_application'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/spawn_manager.rb:217:in `synchronize'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/spawn_manager.rb:217:in `spawn_rails_application'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/spawn_manager.rb:126:in `spawn_application'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/spawn_manager.rb:251:in `handle_spawn_application'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `__send__'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `main_loop'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:168:in `start_synchronously'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/bin/passenger-spawn-server:46
+
+Rendering ./public/500.html (500 Internal Server Error)
+
+
+Processing TagsController#show to 3 (for 68.186.130.40 at 2009-04-03 03:26:56) [GET]
+  Parameters: {"format"=>"3", "action"=>"show", "id"=>"rails-2", "controller"=>"tags"}
+Rendering tags/show
+
+
+ActionView::MissingTemplate (Missing template tags/show.erb in view path /home/rledge21/public_html/videoapp.railsonedge.com/app/views:):
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/template.rb:95:in `find_full_path'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/template.rb:16:in `initialize'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:332:in `new'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:332:in `_unmemoized__pick_template'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/memoizable.rb:70:in `_pick_template'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:256:in `render'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1174:in `render_for_file'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:896:in `render_without_benchmark'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:868:in `render_without_benchmark'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1248:in `default_render'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1254:in `perform_action_without_filters'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `passenger_orig_perform_action'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `passenger_orig_perform_action'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/request_handler.rb:53:in `perform_action'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/request_handler.rb:38:in `orig_process_request'
+    /vendor/plugins/spawn/lib/patches.rb:70:in `process_request'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_request_handler.rb:165:in `main_loop'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/application_spawner.rb:321:in `start_request_handler'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/application_spawner.rb:282:in `handle_spawn_application'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:163:in `safe_fork'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:161:in `fork'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:161:in `safe_fork'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/application_spawner.rb:280:in `handle_spawn_application'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:163:in `safe_fork'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:161:in `fork'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:161:in `safe_fork'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/application_spawner.rb:279:in `handle_spawn_application'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `__send__'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `main_loop'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:168:in `start_synchronously'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:135:in `start'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:112:in `fork'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:112:in `start'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/application_spawner.rb:179:in `start'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/framework_spawner.rb:270:in `handle_spawn_application'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/framework_spawner.rb:263:in `synchronize'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/framework_spawner.rb:263:in `handle_spawn_application'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `__send__'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `main_loop'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:168:in `start_synchronously'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:135:in `start'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:112:in `fork'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:112:in `start'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/framework_spawner.rb:87:in `start'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/spawn_manager.rb:222:in `spawn_rails_application'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/spawn_manager.rb:217:in `synchronize'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/spawn_manager.rb:217:in `spawn_rails_application'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/spawn_manager.rb:126:in `spawn_application'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/spawn_manager.rb:251:in `handle_spawn_application'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `__send__'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `main_loop'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:168:in `start_synchronously'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/bin/passenger-spawn-server:46
+
+Rendering ./public/500.html (500 Internal Server Error)
+
+
+Processing TagsController#show to 3 (for 68.186.130.40 at 2009-04-03 03:27:06) [GET]
+  Parameters: {"format"=>"3", "action"=>"show", "id"=>"rails-2", "controller"=>"tags"}
+Rendering tags/show
+
+
+ActionView::MissingTemplate (Missing template tags/show.erb in view path /home/rledge21/public_html/videoapp.railsonedge.com/app/views:):
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/template.rb:95:in `find_full_path'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/template.rb:16:in `initialize'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:332:in `new'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:332:in `_unmemoized__pick_template'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/memoizable.rb:70:in `_pick_template'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:256:in `render'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1174:in `render_for_file'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:896:in `render_without_benchmark'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:868:in `render_without_benchmark'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1248:in `default_render'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1254:in `perform_action_without_filters'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `passenger_orig_perform_action'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `passenger_orig_perform_action'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/request_handler.rb:53:in `perform_action'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/request_handler.rb:38:in `orig_process_request'
+    /vendor/plugins/spawn/lib/patches.rb:70:in `process_request'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_request_handler.rb:165:in `main_loop'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/application_spawner.rb:321:in `start_request_handler'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/application_spawner.rb:282:in `handle_spawn_application'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:163:in `safe_fork'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:161:in `fork'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:161:in `safe_fork'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/application_spawner.rb:280:in `handle_spawn_application'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:163:in `safe_fork'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:161:in `fork'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:161:in `safe_fork'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/application_spawner.rb:279:in `handle_spawn_application'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `__send__'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `main_loop'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:168:in `start_synchronously'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:135:in `start'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:112:in `fork'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:112:in `start'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/application_spawner.rb:179:in `start'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/framework_spawner.rb:270:in `handle_spawn_application'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/framework_spawner.rb:263:in `synchronize'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/framework_spawner.rb:263:in `handle_spawn_application'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `__send__'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `main_loop'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:168:in `start_synchronously'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:135:in `start'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:112:in `fork'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:112:in `start'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/framework_spawner.rb:87:in `start'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/spawn_manager.rb:222:in `spawn_rails_application'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/spawn_manager.rb:217:in `synchronize'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/spawn_manager.rb:217:in `spawn_rails_application'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/spawn_manager.rb:126:in `spawn_application'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/spawn_manager.rb:251:in `handle_spawn_application'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `__send__'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `main_loop'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:168:in `start_synchronously'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/bin/passenger-spawn-server:46
+
+Rendering ./public/500.html (500 Internal Server Error)
+
+
+Processing TagsController#show (for 68.186.130.40 at 2009-04-03 03:27:32) [GET]
+  Parameters: {"action"=>"show", "id"=>"railscast", "controller"=>"tags"}
+Rendering template within layouts/application
+Rendering tags/show
+Completed in 28ms (View: 24, DB: 0) | 200 OK [http://videoapp.railsonedge.com/tags/railscast]
+
+
+Processing TagsController#show (for 68.186.130.40 at 2009-04-03 03:34:03) [GET]
+  Parameters: {"action"=>"show", "id"=>"railscast", "controller"=>"tags"}
+Rendering template within layouts/application
+Rendering tags/show
+Completed in 2072ms (View: 1272, DB: 532) | 200 OK [http://videoapp.railsonedge.com/tags/railscast]
+
+
+Processing VideosController#index (for 68.186.130.40 at 2009-04-03 03:34:40) [GET]
+  Parameters: {"action"=>"index", "controller"=>"videos"}
+Rendering template within layouts/application
+Rendering videos/index
+Completed in 512ms (View: 464, DB: 32) | 200 OK [http://videoapp.railsonedge.com/]
+
+
+Processing VideosController#index (for 68.186.130.40 at 2009-04-03 03:35:42) [GET]
+  Parameters: {"action"=>"index", "controller"=>"videos"}
+Rendering template within layouts/application
+Rendering videos/index
+Completed in 572ms (View: 492, DB: 56) | 200 OK [http://videoapp.railsonedge.com/]
+
+
+Processing VideosController#index (for 68.186.130.40 at 2009-04-03 03:36:02) [GET]
+  Parameters: {"action"=>"index", "controller"=>"videos", "page"=>"2"}
+Rendering template within layouts/application
+Rendering videos/index
+Completed in 20ms (View: 16, DB: 0) | 200 OK [http://videoapp.railsonedge.com/?page=2]
+
+
+Processing VideosController#index (for 68.186.130.40 at 2009-04-03 03:36:06) [GET]
+  Parameters: {"action"=>"index", "controller"=>"videos", "page"=>"1"}
+Rendering template within layouts/application
+Rendering videos/index
+Completed in 100ms (View: 96, DB: 4) | 200 OK [http://videoapp.railsonedge.com/?page=1]
+
+
+Processing VideosController#index (for 68.186.130.40 at 2009-04-03 03:37:35) [GET]
+  Parameters: {"action"=>"index", "controller"=>"videos", "page"=>"1"}
+Rendering template within layouts/application
+Rendering videos/index
+Completed in 772ms (View: 448, DB: 120) | 200 OK [http://videoapp.railsonedge.com/?page=1]
+
+
+Processing VideosController#show (for 91.205.124.2 at 2009-04-03 05:49:51) [GET]
+  Parameters: {"action"=>"show", "id"=>"29", "controller"=>"videos"}
+Rendering template within layouts/application
+Rendering videos/show
+Completed in 280ms (View: 248, DB: 12) | 200 OK [http://videoapp.railsonedge.com/videos/29]
+
+
+Processing VideosController#show (for 91.205.124.2 at 2009-04-03 05:50:47) [GET]
+  Parameters: {"action"=>"show", "id"=>"14", "controller"=>"videos"}
+Rendering template within layouts/application
+Rendering videos/show
+Completed in 20ms (View: 12, DB: 8) | 200 OK [http://videoapp.railsonedge.com/videos/14]
+
+
+Processing VideosController#show (for 91.205.124.2 at 2009-04-03 05:51:53) [GET]
+  Parameters: {"action"=>"show", "id"=>"13", "controller"=>"videos"}
+Rendering template within layouts/application
+Rendering videos/show
+Completed in 20ms (View: 16, DB: 0) | 200 OK [http://videoapp.railsonedge.com/videos/13]
+
+
+Processing VideosController#show (for 91.205.124.2 at 2009-04-03 05:52:57) [GET]
+  Parameters: {"action"=>"show", "id"=>"12", "controller"=>"videos"}
+Rendering template within layouts/application
+Rendering videos/show
+Completed in 40ms (View: 36, DB: 0) | 200 OK [http://videoapp.railsonedge.com/videos/12]
+
+
+Processing VideosController#show (for 91.205.124.2 at 2009-04-03 05:54:02) [GET]
+  Parameters: {"action"=>"show", "id"=>"11", "controller"=>"videos"}
+Rendering template within layouts/application
+Rendering videos/show
+Completed in 32ms (View: 28, DB: 0) | 200 OK [http://videoapp.railsonedge.com/videos/11]
+
+
+Processing VideosController#show (for 91.205.124.2 at 2009-04-03 05:55:08) [GET]
+  Parameters: {"action"=>"show", "id"=>"10", "controller"=>"videos"}
+Rendering template within layouts/application
+Rendering videos/show
+Completed in 12ms (View: 12, DB: 0) | 200 OK [http://videoapp.railsonedge.com/videos/10]
+
+
+Processing VideosController#show (for 91.205.124.2 at 2009-04-03 05:56:14) [GET]
+  Parameters: {"action"=>"show", "id"=>"4", "controller"=>"videos"}
+Rendering template within layouts/application
+Rendering videos/show
+Completed in 12ms (View: 12, DB: 0) | 200 OK [http://videoapp.railsonedge.com/videos/4]
+
+
+Processing VideosController#new (for 91.205.124.2 at 2009-04-03 05:57:17) [GET]
+  Parameters: {"action"=>"new", "controller"=>"videos"}
+Redirected to http://videoapp.railsonedge.com/user_session/new
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://videoapp.railsonedge.com/videos/new]
+
+
+Processing UserSessionsController#new (for 91.205.124.2 at 2009-04-03 05:57:18) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 8ms (View: 8, DB: 0) | 200 OK [http://videoapp.railsonedge.com/user_session/new]
+
+
+Processing UsersController#new (for 91.205.124.2 at 2009-04-03 05:58:23) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://videoapp.railsonedge.com/account/new]
+
+
+Processing VideosController#index (for 76.10.181.81 at 2009-04-03 12:35:04) [GET]
+  Parameters: {"action"=>"index", "controller"=>"videos"}
+Rendering template within layouts/application
+Rendering videos/index
+Completed in 328ms (View: 308, DB: 4) | 200 OK [http://videoapp.railsonedge.com/]
+
+
+Processing VideosController#show (for 76.10.181.81 at 2009-04-03 12:35:11) [GET]
+  Parameters: {"action"=>"show", "id"=>"32", "controller"=>"videos"}
+Rendering template within layouts/application
+Rendering videos/show
+Completed in 188ms (View: 184, DB: 4) | 200 OK [http://videoapp.railsonedge.com/videos/32]
+
+
+Processing VideosController#index (for 68.186.130.40 at 2009-04-03 16:01:20) [GET]
+  Parameters: {"action"=>"index", "controller"=>"videos"}
+Rendering template within layouts/application
+Rendering videos/index
+Completed in 296ms (View: 276, DB: 0) | 200 OK [http://videoapp.railsonedge.com/]
+
+
+Processing VideosController#index (for 68.52.190.151 at 2009-04-03 16:01:26) [GET]
+  Parameters: {"action"=>"index", "controller"=>"videos"}
+Rendering template within layouts/application
+Rendering videos/index
+Completed in 28ms (View: 24, DB: 0) | 200 OK [http://videoapp.railsonedge.com/]
+
+
+Processing VideosController#index (for 68.186.130.40 at 2009-04-03 16:01:30) [GET]
+  Parameters: {"action"=>"index", "controller"=>"videos", "page"=>"2"}
+Rendering template within layouts/application
+Rendering videos/index
+Completed in 80ms (View: 80, DB: 0) | 200 OK [http://videoapp.railsonedge.com/?page=2]
+
+
+Processing VideosController#index (for 68.186.130.40 at 2009-04-03 16:01:32) [GET]
+  Parameters: {"action"=>"index", "controller"=>"videos", "page"=>"1"}
+Rendering template within layouts/application
+Rendering videos/index
+Completed in 68ms (View: 68, DB: 0) | 200 OK [http://videoapp.railsonedge.com/?page=1]
+
+
+Processing TagsController#show (for 68.52.190.151 at 2009-04-03 16:04:09) [GET]
+  Parameters: {"action"=>"show", "id"=>"snowboard", "controller"=>"tags"}
+Rendering template within layouts/application
+Rendering tags/show
+Completed in 24ms (View: 12, DB: 4) | 200 OK [http://videoapp.railsonedge.com/tags/snowboard]
+
+
+Processing VideosController#show (for 68.186.130.40 at 2009-04-03 16:06:35) [GET]
+  Parameters: {"action"=>"show", "id"=>"14", "controller"=>"videos"}
+Rendering template within layouts/application
+Rendering videos/show
+Completed in 80ms (View: 68, DB: 12) | 200 OK [http://videoapp.railsonedge.com/videos/14]
+
+
+Processing VideosController#index (for 149.149.102.12 at 2009-04-03 17:40:18) [GET]
+  Parameters: {"action"=>"index", "controller"=>"videos"}
+Rendering template within layouts/application
+Rendering videos/index
+Completed in 248ms (View: 228, DB: 4) | 200 OK [http://videoapp.railsonedge.com/]
+
+
+Processing VideosController#index (for 69.181.203.238 at 2009-04-03 22:47:30) [GET]
+  Parameters: {"action"=>"index", "controller"=>"videos"}
+Rendering template within layouts/application
+Rendering videos/index
+Completed in 200ms (View: 184, DB: 8) | 200 OK [http://videoapp.railsonedge.com/]
+
+
+Processing VideosController#index (for 201.70.76.253 at 2009-04-03 23:24:16) [GET]
+  Parameters: {"action"=>"index", "controller"=>"videos"}
+Rendering template within layouts/application
+Rendering videos/index
+Completed in 608ms (View: 524, DB: 60) | 200 OK [http://videoapp.railsonedge.com/]
+
+
+Processing VideosController#show (for 201.70.76.253 at 2009-04-03 23:24:33) [GET]
+  Parameters: {"action"=>"show", "id"=>"30", "controller"=>"videos"}
+Rendering template within layouts/application
+Rendering videos/show
+Completed in 196ms (View: 96, DB: 96) | 200 OK [http://videoapp.railsonedge.com/videos/30]
+
+
+Processing ApplicationController#index (for 66.249.73.130 at 2009-04-04 03:01:21) [GET]
+
+
+ActionController::RoutingError (No route matches "/iauutqjtnzpxmnuo.html" with {:method=>:get}):
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/routing/route_set.rb:386:in `recognize'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:182:in `handle_request'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/request_handler.rb:38:in `orig_process_request'
+    /vendor/plugins/spawn/lib/patches.rb:70:in `process_request'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_request_handler.rb:165:in `main_loop'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/application_spawner.rb:321:in `start_request_handler'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/application_spawner.rb:282:in `handle_spawn_application'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:163:in `safe_fork'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:161:in `fork'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:161:in `safe_fork'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/application_spawner.rb:280:in `handle_spawn_application'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:163:in `safe_fork'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:161:in `fork'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:161:in `safe_fork'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/application_spawner.rb:279:in `handle_spawn_application'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `__send__'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `main_loop'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:168:in `start_synchronously'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:135:in `start'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:112:in `fork'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:112:in `start'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/application_spawner.rb:179:in `start'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/framework_spawner.rb:270:in `handle_spawn_application'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/framework_spawner.rb:263:in `synchronize'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/framework_spawner.rb:263:in `handle_spawn_application'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `__send__'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `main_loop'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:168:in `start_synchronously'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:135:in `start'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:112:in `fork'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:112:in `start'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/framework_spawner.rb:87:in `start'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/spawn_manager.rb:222:in `spawn_rails_application'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/spawn_manager.rb:217:in `synchronize'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/spawn_manager.rb:217:in `spawn_rails_application'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/spawn_manager.rb:126:in `spawn_application'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/spawn_manager.rb:251:in `handle_spawn_application'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `__send__'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `main_loop'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:168:in `start_synchronously'
+    /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/gems/1.8/gems/passenger-2.0.6/bin/passenger-spawn-server:46
+
+Rendering ./public/404.html (404 Not Found)
+
+
+Processing VideosController#index (for 173.9.205.25 at 2009-04-04 04:40:17) [GET]
+  Parameters: {"action"=>"index", "controller"=>"videos"}
+Rendering template within layouts/application
+Rendering videos/index
+Completed in 252ms (View: 232, DB: 4) | 200 OK [http://videoapp.railsonedge.com/]
+
+
+Processing VideosController#show (for 173.9.205.25 at 2009-04-04 04:40:24) [GET]
+  Parameters: {"action"=>"show", "id"=>"33", "controller"=>"videos"}
+Rendering template within layouts/application
+Rendering videos/show
+Completed in 52ms (View: 32, DB: 16) | 200 OK [http://videoapp.railsonedge.com/videos/33]
+
+
+Processing VideosController#index (for 173.9.205.25 at 2009-04-04 04:40:53) [GET]
+  Parameters: {"action"=>"index", "controller"=>"videos"}
+Rendering template within layouts/application
+Rendering videos/index
+Completed in 24ms (View: 20, DB: 0) | 200 OK [http://videoapp.railsonedge.com/]
+
+
+Processing VideosController#show (for 173.9.205.25 at 2009-04-04 04:41:05) [GET]
+  Parameters: {"action"=>"show", "id"=>"13", "controller"=>"videos"}
+Rendering template within layouts/application
+Rendering videos/show
+Completed in 28ms (View: 16, DB: 12) | 200 OK [http://videoapp.railsonedge.com/videos/13]
+
+
+Processing VideosController#index (for 68.186.130.40 at 2009-04-04 05:57:04) [GET]
+  Parameters: {"action"=>"index", "controller"=>"videos"}
+Rendering template within layouts/application
+Rendering videos/index
+Completed in 232ms (View: 216, DB: 0) | 200 OK [http://videoapp.railsonedge.com/]

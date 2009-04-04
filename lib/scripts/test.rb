@@ -5,7 +5,7 @@ require 'scrubyt'
 Scrubyt.logger = Scrubyt::Logger.new
 
 data = Scrubyt::Extractor.define do
-  fetch "http://railscasts.com/episodes/149-rails-engines"
+  fetch "http://railscasts.com/episodes/99-complex-partials"
   video "//div[@class='main']" do
     title '/h2'
     description '/div[@class="description"]'
