@@ -18,17 +18,17 @@ module Technoweenie # :nodoc:
       # You can sign up for S3 and get access keys by visiting http://aws.amazon.com/s3.
       #
       # Example configuration (RAILS_ROOT/config/amazon_s3.yml)
-      # 
+      #
       #   development:
       #     bucket_name: appname_development
       #     access_key_id: <your key>
       #     secret_access_key: <your key>
-      #   
+      #
       #   test:
       #     bucket_name: appname_test
       #     access_key_id: <your key>
       #     secret_access_key: <your key>
-      #   
+      #
       #   production:
       #     bucket_name: appname
       #     access_key_id: <your key>
@@ -84,7 +84,7 @@ module Technoweenie # :nodoc:
       # === Permissions
       #
       # By default, files are stored on S3 with public access permissions. You can customize this using
-      # the <tt>:s3_access</tt> option to <tt>has_attachment</tt>. Available values are 
+      # the <tt>:s3_access</tt> option to <tt>has_attachment</tt>. Available values are
       # <tt>:private</tt>, <tt>:public_read_write</tt>, and <tt>:authenticated_read</tt>.
       #
       # === Other options
@@ -123,7 +123,7 @@ module Technoweenie # :nodoc:
 
         def self.included(base) #:nodoc:
           mattr_reader :bucket_name, :s3_config
-          
+
           begin
             require 'aws/s3'
             include AWS::S3
@@ -150,11 +150,11 @@ module Technoweenie # :nodoc:
         def self.protocol
           @protocol ||= s3_config[:use_ssl] ? 'https://' : 'http://'
         end
-        
+
         def self.hostname
           @hostname ||= s3_config[:server] || AWS::S3::DEFAULT_HOST
         end
-        
+
         def self.port_string
           @port_string ||= (s3_config[:port].nil? || s3_config[:port] == (s3_config[:use_ssl] ? 443 : 80)) ? '' : ":#{s3_config[:port]}"
         end
@@ -163,11 +163,11 @@ module Technoweenie # :nodoc:
           def s3_protocol
             Technoweenie::AttachmentFu::Backends::S3Backend.protocol
           end
-          
+
           def s3_hostname
             Technoweenie::AttachmentFu::Backends::S3Backend.hostname
           end
-          
+
           def s3_port_string
             Technoweenie::AttachmentFu::Backends::S3Backend.port_string
           end
@@ -196,7 +196,7 @@ module Technoweenie # :nodoc:
           File.join(base_path, thumbnail_name_for(thumbnail))
         end
 
-        # All public objects are accessible via a GET request to the S3 servers. You can generate a 
+        # All public objects are accessible via a GET request to the S3 servers. You can generate a
         # url for an object using the s3_url method.
         #
         #   @photo.s3_url
@@ -211,7 +211,7 @@ module Technoweenie # :nodoc:
         end
         alias :public_filename :s3_url
 
-        # All private objects are accessible via an authenticated GET request to the S3 servers. You can generate an 
+        # All private objects are accessible via an authenticated GET request to the S3 servers. You can generate an
         # authenticated url for an object like this:
         #
         #   @photo.authenticated_s3_url
@@ -223,7 +223,7 @@ module Technoweenie # :nodoc:
         #
         #   # Absolute expiration date (October 13th, 2025)
         #   @photo.authenticated_s3_url(:expires => Time.mktime(2025,10,13).to_i)
-        #   
+        #
         #   # Expiration in five hours from now
         #   @photo.authenticated_s3_url(:expires_in => 5.hours)
         #
@@ -252,11 +252,11 @@ module Technoweenie # :nodoc:
         def s3_protocol
           Technoweenie::AttachmentFu::Backends::S3Backend.protocol
         end
-        
+
         def s3_hostname
           Technoweenie::AttachmentFu::Backends::S3Backend.hostname
         end
-          
+
         def s3_port_string
           Technoweenie::AttachmentFu::Backends::S3Backend.port_string
         end
@@ -269,7 +269,7 @@ module Technoweenie # :nodoc:
 
           def rename_file
             return unless @old_filename && @old_filename != filename
-            
+
             old_full_filename = File.join(base_path, @old_filename)
 
             S3Object.rename(

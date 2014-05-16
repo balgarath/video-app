@@ -6,22 +6,22 @@
     <title>Video App</title>
       <%= stylesheet_link_tag 'style' %>
 
-  		<%= javascript_include_tag 'flowplayer', 'jquery' %>   
+  		<%= javascript_include_tag 'flowplayer', 'jquery' %>
   </head>
 
   <body>
 
-    
+
     <div id = "body">
 	  	<div id = "header">
 	  		<input id = "search" type = "text" value = "Search"/>
 	  		<div id = "logo"><a href = "/">video_app</a></div>
 	  	</div>
 
-    	
+
     	<div id = "main">
 				<div id = "main_col">
-				  <div class = "innertube">  
+				  <div class = "innertube">
 				    <% flash.each do |key,value| %>
 
 				      <div id="flash" class="flash_<%= key %>" >
@@ -31,14 +31,14 @@
 				    <% end -%>
 
 				    <%= yield :layout %>
-						
+
 					</div><!-- /innertube -->
-	
+
 				</div><!-- /main_col -->
 			</div><!-- /main -->
 
     	<div id = "sidebar">
-	    	<div class = "innertube">	
+	    	<div class = "innertube">
 				  <%= link_to 'New Video', new_video_url, :class => 'new' %><br /><br />
 					<% if !current_user %>
 					  <%= link_to "Register", new_account_path %><br />
@@ -65,7 +65,7 @@
 				Portfolio: <a href = "http://www.ralphedge.com/" target = "_new">http://www.ralphedge.com</a>
 			</div>
 		</div><!-- /#body -->
-		
+
   </body>
 
 </html>

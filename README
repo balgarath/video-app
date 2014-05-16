@@ -5,32 +5,32 @@ Portfolio: http://www.ralphedge.com
   Video-App is a YouTube-like site written in rails.  It converts video to flash(ffmpeg) and plays videos using FlowPlayer(an open-source flash video player).  Has Pagination(will_paginate), Tagging/Tag Cloud(acts_as_taggable_on_steroids), User Authentication(authlogic), Video Replies, and Video Thumbnails.  Video conversion is done in a seperate process, using the Spawn plugin.  Uses Rails Version 2.2.2...you can change the Rails version it uses in config/environment.rb
 
 To Install: (let me know if I need to add anything to this)
-  *Download the code: 
+  *Download the code:
 
     git clone git://github.com/balgarath/video-app.git
     cd video-app
 
-  *(Optional) switch to branch 0.2:  
+  *(Optional) switch to branch 0.2:
 
     git fetch origin 0.2:0.2
     git checkout 0.2
-    
+
   *Edit your config/databases.yml
-  
+
   *Install will_paginate - if you don't have it already
     sudo gem install will_paginate
-  
+
   *install ffmpeg - you may need to download and compile from source - http://www.ffmpeg.org/download.html
-  
+
     In Ubuntu:
       sudo apt-get install ffmpeg
-      
+
   *create and migrate database
     rake db:create
     rake db:migrate
-    
+
   *launch server
     ./script/server
-    
-    
-    
+
+
+

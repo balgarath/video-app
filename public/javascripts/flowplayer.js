@@ -1,23 +1,23 @@
-/** 
+/**
  * flowplayer.js 3.0.3. The Flowplayer API
- * 
+ *
  * Copyright 2008 Flowplayer Oy
- * 
+ *
  * This file is part of Flowplayer.
- * 
+ *
  * Flowplayer is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * Flowplayer is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with Flowplayer.  If not, see <http://www.gnu.org/licenses/>.
- * 
+ *
  * Version: 3.0.3 - Wed Jan 07 2009 13:22:30 GMT-0000 (GMT+00:00)
  */
 (function(){function log(args){console.log("$f.fireEvent",[].slice.call(args));}function clone(obj){if(!obj||typeof obj!='object'){return obj;}var temp=new obj.constructor();for(var key in obj){if(obj.hasOwnProperty(key)){temp[key]=clone(obj[key]);}}return temp;}function each(obj,fn){if(!obj){return;}var name,i=0,length=obj.length;if(length===undefined){for(name in obj){if(fn.call(obj[name],name,obj[name])===false){break;}}}else{for(var value=obj[0];i<length&&fn.call(value,i,value)!==false;value=obj[++i]){}}return obj;}function el(id){return document.getElementById(id);}function extend(to,from,skipFuncs){if(to&&from){each(from,function(name,value){if(!skipFuncs||typeof value!='function'){to[name]=value;}});}}function select(query){var index=query.indexOf(".");if(index!=-1){var tag=query.substring(0,index)||"*";var klass=query.substring(index+1,query.length);var els=[];each(document.getElementsByTagName(tag),function(){if(this.className&&this.className.indexOf(klass)!=-1){els.push(this);}});return els;}}function stopEvent(e){e=e||window.event;if(e.preventDefault){e.stopPropagation();e.preventDefault();}else{e.returnValue=false;e.cancelBubble=true;}return false;}function bind(to,evt,fn){to[evt]=to[evt]||[];to[evt].push(fn);}function makeId(){return"_"+(""+Math.random()).substring(2,10);}var Clip=function(json,index,player){var self=this;var cuepoints={};var listeners={};self.index=index;if(typeof json=='string'){json={url:json};}extend(this,json,true);each(("Begin*,Start,Pause*,Resume*,Seek*,Stop*,Finish*,LastSecond,Update,BufferFull,BufferEmpty,BufferStop").split(","),function(){var evt="on"+this;if(evt.indexOf("*")!=-1){evt=evt.substring(0,evt.length-1);var before="onBefore"+evt.substring(2);self[before]=function(fn){bind(listeners,before,fn);return self;};}self[evt]=function(fn){bind(listeners,evt,fn);return self;};if(index==-1){if(self[before]){player[before]=self[before];}if(self[evt]){player[evt]=self[evt];}}});extend(this,{onCuepoint:function(points,fn){if(arguments.length==1){cuepoints.embedded=[null,points];return self;}if(typeof points=='number'){points=[points];}var fnId=makeId();cuepoints[fnId]=[points,fn];if(player.isLoaded()){player._api().fp_addCuepoints(points,index,fnId);}return self;},update:function(json){extend(self,json);if(player.isLoaded()){player._api().fp_updateClip(json,index);}var conf=player.getConfig();var clip=(index==-1)?conf.clip:conf.playlist[index];extend(clip,json,true);},_fireEvent:function(evt,arg1,arg2,target){if(evt=='onLoad'){each(cuepoints,function(key,val){if(val[0]){player._api().fp_addCuepoints(val[0],index,key);}});return false;}if(index!=-1){target=self;}if(evt=='onCuepoint'){var fn=cuepoints[arg1];if(fn){return fn[1].call(player,target,arg2);}}if(evt=='onStart'||evt=='onUpdate'){extend(target,arg1);if(!target.duration){target.duration=arg1.metaData.duration;}else{target.fullDuration=arg1.metaData.duration;}}var ret=true;each(listeners[evt],function(){ret=this.call(player,target,arg1,arg2);});return ret;}});if(json.onCuepoint){var arg=json.onCuepoint;self.onCuepoint.apply(self,typeof arg=='function'?[arg]:arg);delete json.onCuepoint;}each(json,function(key,val){if(typeof val=='function'){bind(listeners,key,val);delete json[key];}});if(index==-1){player.onCuepoint=this.onCuepoint;}};var Plugin=function(name,json,player,fn){var listeners={};var self=this;var hasMethods=false;if(fn){extend(listeners,fn);}each(json,function(key,val){if(typeof val=='function'){listeners[key]=val;delete json[key];}});extend(this,{animate:function(props,speed,fn){if(!props){return self;}if(typeof speed=='function'){fn=speed;speed=500;}if(typeof props=='string'){var key=props;props={};props[key]=speed;speed=500;}if(fn){var fnId=makeId();listeners[fnId]=fn;}if(speed===undefined){speed=500;}json=player._api().fp_animate(name,props,speed,fnId);return self;},css:function(props,val){if(val!==undefined){var css={};css[props]=val;props=css;}json=player._api().fp_css(name,props);extend(self,json);return self;},show:function(){this.display='block';player._api().fp_showPlugin(name);return self;},hide:function(){this.display='none';player._api().fp_hidePlugin(name);return self;},toggle:function(){this.display=player._api().fp_togglePlugin(name);return self;},fadeTo:function(o,speed,fn){if(typeof speed=='function'){fn=speed;speed=500;}if(fn){var fnId=makeId();listeners[fnId]=fn;}this.display=player._api().fp_fadeTo(name,o,speed,fnId);this.opacity=o;return self;},fadeIn:function(speed,fn){return self.fadeTo(1,speed,fn);},fadeOut:function(speed,fn){return self.fadeTo(0,speed,fn);},getName:function(){return name;},_fireEvent:function(evt,arg){if(evt=='onUpdate'){var json=player._api().fp_getPlugin(name);if(!json){return;}extend(self,json);delete self.methods;if(!hasMethods){each(json.methods,function(){var method=""+this;self[method]=function(){var a=[].slice.call(arguments);var ret=player._api().fp_invoke(name,method,a);return ret=='undefined'?self:ret;};});hasMethods=true;}}var fn=listeners[evt];if(fn){fn.call(self,arg);if(evt.substring(0,1)=="_"){delete listeners[evt];}}}});};function Player(wrapper,params,conf){var

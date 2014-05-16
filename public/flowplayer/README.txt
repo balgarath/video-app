@@ -21,7 +21,7 @@ Version history:
 - now displays a live feed even when the RTMP server does not send any metadata and the onStart method is not therefore dispatched
 - added onMetaData clip event
 - fixed 'orig' scaling: the player went to 'fit' scaling after coming back from fullscreen. This is now fixed and the original dimensions are preserved in non-fullscreen mode.
-- cuepoint times are now given in milliseconds, the firing precision is 100 ms. All cuepoint times are rounded to the nearest 100 ms value (for example 1120 rounds to 1100) 
+- cuepoint times are now given in milliseconds, the firing precision is 100 ms. All cuepoint times are rounded to the nearest 100 ms value (for example 1120 rounds to 1100)
 - backgroundGradient was drawn over the background image in the canvas and in the content and controlbar plugins. Now it's drawn below the image.
 - added cuepointMultiplier property to clips. This can be used to multiply the time values read from cuepoint metadata embedded into video files.
 - the player's framerate was increased to 24 FPS, makes all animations smoother
@@ -68,7 +68,7 @@ RC4
 - Should not stop playback too early before the clip is really completed
 - The START event is now delayed so that the metadata is available when the event is fired, METADATA event was removed,
   new event BEGIN that is dispatched when the playback has been successfully started. Metadata is not normally
-  available when BEGIN is fired. 
+  available when BEGIN is fired.
 
 RC3
 ---

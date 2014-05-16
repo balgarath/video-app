@@ -7,7 +7,7 @@ class Conversation < ActiveRecord::Base
 
   state :needs_attention, :enter => Proc.new { |o| o.needs_attention_enter = true },
                           :after => Proc.new { |o| o.needs_attention_after = true }
-                          
+
   state :read, :enter => :read_enter_action,
                :exit  => Proc.new { |o| o.read_exit  = true },
                :after => [:read_after_first_action, :read_after_second_action]
@@ -23,7 +23,7 @@ class Conversation < ActiveRecord::Base
   event :view do
     transitions :to => :read,              :from => [:needs_attention, :read]
   end
-  
+
   event :reply do
     transitions :to => :awaiting_response, :from => [:read, :closed]
   end

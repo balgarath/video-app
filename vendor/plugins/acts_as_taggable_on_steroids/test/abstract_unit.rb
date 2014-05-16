@@ -31,7 +31,7 @@ Test::Unit::TestCase.fixture_path = fixture_path
 class Test::Unit::TestCase #:nodoc:
   self.use_transactional_fixtures = true
   self.use_instantiated_fixtures  = false
-  
+
   def assert_equivalent(expected, actual, message = nil)
     if expected.first.is_a?(ActiveRecord::Base)
       assert_equal expected.sort_by(&:id), actual.sort_by(&:id), message
@@ -39,26 +39,26 @@ class Test::Unit::TestCase #:nodoc:
       assert_equal expected.sort, actual.sort, message
     end
   end
-  
+
   def assert_tag_counts(tags, expected_values)
     # Map the tag fixture names to real tag names
     expected_values = expected_values.inject({}) do |hash, (tag, count)|
       hash[tags(tag).name] = count
       hash
     end
-    
+
     tags.each do |tag|
       value = expected_values.delete(tag.name)
-      
+
       assert_not_nil value, "Expected count for #{tag.name} was not provided"
       assert_equal value, tag.count, "Expected value of #{value} for #{tag.name}, but was #{tag.count}"
     end
-    
+
     unless expected_values.empty?
       assert false, "The following tag counts were not present: #{expected_values.inspect}"
     end
   end
-  
+
   def assert_queries(num = 1)
     $query_count = 0
     yield
@@ -69,29 +69,29 @@ class Test::Unit::TestCase #:nodoc:
   def assert_no_queries(&block)
     assert_queries(0, &block)
   end
-  
+
   # From Rails trunk
   def assert_difference(expressions, difference = 1, message = nil, &block)
-    expression_evaluations = [expressions].flatten.collect{|expression| lambda { eval(expression, block.binding) } } 
-    
+    expression_evaluations = [expressions].flatten.collect{|expression| lambda { eval(expression, block.binding) } }
+
     original_values = expression_evaluations.inject([]) { |memo, expression| memo << expression.call }
     yield
     expression_evaluations.each_with_index do |expression, i|
       assert_equal original_values[i] + difference, expression.call, message
     end
   end
-  
+
   def assert_no_difference(expressions, message = nil, &block)
     assert_difference expressions, 0, message, &block
   end
 end
 
-ActiveRecord::Base.connection.class.class_eval do  
+ActiveRecord::Base.connection.class.class_eval do
   def execute_with_counting(sql, name = nil, &block)
     $query_count ||= 0
     $query_count += 1
     execute_without_counting(sql, name, &block)
   end
-  
+
   alias_method_chain :execute, :counting
 end

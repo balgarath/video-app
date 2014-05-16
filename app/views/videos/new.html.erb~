@@ -11,7 +11,7 @@
     </tr>
     <tr>
       <td><%= f.label :video %>: </td><td><%= f.file_field :uploaded_data %></td>
-    </tr>    
+    </tr>
     <tr><td><%= f.submit 'Submit' %> - <%= link_to 'Back', videos_path %></td></tr>
   </table>
 

@@ -1,16 +1,16 @@
-The FlowPlayer Free version is released under GNU GENERAL PUBLIC LICENSE 
+The FlowPlayer Free version is released under GNU GENERAL PUBLIC LICENSE
 Version 3 (GPL). GPL allows you to integrate Flowplayer into any website
 provided that you don't remove the Flowplayer logo images or texts from the
 software.
 
-If you do remove the logos, you are required to place a Flowplayer link into the 
+If you do remove the logos, you are required to place a Flowplayer link into the
 site that uses Flowplayer. This link must point to http://flowplayer.org. This
 is because the GPL requires you to provide the users of your site an easy access
 to the Flowplayer source code. The logos act as such links, and if you remove
 them, you must provide an alternative link.
 
 Commercial licenses are available. These unburden you from the requirement
-to offer these links. Additionally, the commercial player version does 
+to offer these links. Additionally, the commercial player version does
 not have any Flowplayer logos or texts.
 
 ========================================================================

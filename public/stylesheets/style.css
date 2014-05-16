@@ -5,9 +5,9 @@ html
 	padding: 0;
 }
 
-body 
+body
 {
-	background: #fefefe none repeat scroll 0 0;	
+	background: #fefefe none repeat scroll 0 0;
 	font-family: arial, helvetica, sans-serif;
 	margin: 0;
 	padding: 0;
@@ -29,8 +29,8 @@ body
 h1, h2 {
 	letter-spacing:-1px;
 	color:#2D5AC3;
-	font-weight:normal;		
-	
+	font-weight:normal;
+
 }
 
 h1 {
@@ -50,7 +50,7 @@ h2 {
 	height: 75px;
 	padding-bottom: 0;
 	padding-top: 8px;
-	
+
 }
 
 #logo
@@ -67,7 +67,7 @@ h2 {
 	height: 33px;
 	font-weight: bold;
 	font-size: 25px;
-	text-decoration: none;	
+	text-decoration: none;
 	background-color: #5050FF;
 	padding: 5px 10px 5px 10px;
 	border: 3px solid #5555A5;
@@ -110,9 +110,9 @@ h2 {
 
 #body h2
 {
-	font-size: 23px;	
+	font-size: 23px;
 	text-align: center;
-	
+
 }
 
 #sidebar
@@ -126,7 +126,7 @@ h2 {
 	margin-left: -100%;
 	text-align: center;
 	height: 100%;
-	
+
 }
 
 #sidebar a
@@ -139,7 +139,7 @@ h2 {
 #sidebar .new
 {
 	color: red;
-	font-size: 21px;	
+	font-size: 21px;
 }
 
 #sidebar a:hover
@@ -194,7 +194,7 @@ h2 {
 }
 
 a {
-	color:#295c72;		
+	color:#295c72;
 }
 
 .video_thumb
@@ -213,10 +213,10 @@ a.video_thumb
 	border: thin solid #5555A5;
 	background-color: #ddddff;
 	text-decoration: none;
-	
+
 }
 
-a:hover.video_thumb 
+a:hover.video_thumb
 {
 	background-color: #ddffdd;
 }
@@ -243,10 +243,10 @@ a:hover.video_thumb
 .clear-right
 {
 	clear: right;
-	
+
 	margin: 5px;
 	width: 5px;
-	height: 5px;	
+	height: 5px;
 }
 
 .pagination
@@ -254,12 +254,12 @@ a:hover.video_thumb
 	text-align: center;
 	margin: auto;
 	width: 400px;
-	font-size: 80%;	
+	font-size: 80%;
 }
 
-.pagination a 
+.pagination a
 {
-	color: 
+	color:
 }
 
 .page-wide
@@ -267,11 +267,11 @@ a:hover.video_thumb
 	bottom: 0;
 	margin-top: 75px;
 	position: relative;
-	
+
 	margin: auto;
 	float: right;
 	margin-top: 75px;
-	
+
 }
 
 
@@ -287,7 +287,7 @@ a:hover.video_thumb
 	text-align: center;
 	font-weight: bold;
 	color: #c8c8c8;
-	
+
 }
 
 input
@@ -296,7 +296,7 @@ input
 	border: 3px solid gray;
 	width: 300px;
 	font-size: 120%;
-	
+
 }
 
 input.submit
@@ -360,7 +360,7 @@ label
 	border: 1px solid gray;
 	border-bottom: 2px solid black;
 	border-right: 2px solid gray;
-		
+
 }
 
 .flash_notice

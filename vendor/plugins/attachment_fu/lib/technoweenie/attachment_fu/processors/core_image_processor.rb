@@ -8,13 +8,13 @@ module Technoweenie # :nodoc:
           base.send :extend, ClassMethods
           base.alias_method_chain :process_attachment, :processing
         end
-        
+
         module ClassMethods
           def with_image(file, &block)
             block.call OSX::CIImage.from(file)
           end
         end
-                
+
         protected
           def process_attachment_with_processing
             return unless process_attachment_without_processing
@@ -40,14 +40,14 @@ module Technoweenie # :nodoc:
               new_size = [img.extent.size.width, img.extent.size.height] / size.to_s
               processor.resize(new_size[0], new_size[1])
             end
-            
+
             processor.render do |result|
               self.width  = result.extent.size.width  if respond_to?(:width)
               self.height = result.extent.size.height if respond_to?(:height)
               result.save self.temp_path, OSX::NSJPEGFileType
               self.size = File.size(self.temp_path)
             end
-          end          
+          end
       end
     end
   end

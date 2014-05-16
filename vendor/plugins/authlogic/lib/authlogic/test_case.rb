@@ -65,13 +65,13 @@ module Authlogic
     def activate_authlogic
       Authlogic::Session::Base.controller = (@request && Authlogic::TestCase::ControllerAdapter.new(@request)) || controller
     end
-    
+
     # The Authlogic::TestCase::MockController object passed to Authlogic to activate it. You can access this in your test.
     # See the module description for an example.
     def controller
       @controller ||= Authlogic::TestCase::MockController.new
     end
   end
-  
+
   ::Test::Unit::TestCase.send(:include, TestCase)
 end

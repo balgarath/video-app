@@ -4,12 +4,12 @@
 	<span class = "tags">Tagged with: <span><%= @video.tag_list %></span></span>
 		<% if @video.state == "converted" %>
 			<p id = "video">
-				<a  
-					 href="<%= @video.public_filename %>"  
-					 style="display:block;width:720px;height:480px"  
-					 id="player"> 
-				</a> 
-			  
+				<a
+					 href="<%= @video.public_filename %>"
+					 style="display:block;width:720px;height:480px"
+					 id="player">
+				</a>
+
 				<!-- this will install flowplayer inside previous A- tag. -->
 				<script>
 					flowplayer("player", "/flowplayer/flowplayer-3.0.3.swf");
@@ -17,9 +17,9 @@
 			</p>
 		<% else %>
 			<% if @video.state == "error" %>
-				<h2>Error Converting Video, it will be removed shortly</h2>	
+				<h2>Error Converting Video, it will be removed shortly</h2>
 			<% else %>
-				<h2>Video is being converted, check back in a few minutes</h2>		
+				<h2>Video is being converted, check back in a few minutes</h2>
 			<% end %>
 
 		<% end %>
@@ -28,7 +28,7 @@
 
 	<div id = "video_replies">
 		<%= render :partial => 'reply' %>
-		
+
 		<% for reply in @video.replies do %>
 			<div class = "reply">
 				<p class = "author">Posted By: <%= link_to @reply.user.login, @reply.user %> on <%= @reply.created_at %></p>
@@ -37,4 +37,4 @@
 		<% end %>
 	</div>
 
-</div><!-- /video_show -->		
+</div><!-- /video_show -->

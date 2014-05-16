@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
-  before_filter :require_user, :only => [:show, :edit, :update]	
-	
+  before_filter :require_user, :only => [:show, :edit, :update]
+
   # GET /users
   # GET /users.xml
   def index
@@ -63,5 +63,5 @@ class UsersController < ApplicationController
 
     redirect_to(users_url)
   end
-  
+
 end

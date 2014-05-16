@@ -11,32 +11,32 @@ module BaseAttachmentTests
       assert_nil      attachment.height
     end
   end
-  
+
   def test_reassign_attribute_data
     assert_created 1 do
       attachment = upload_file :filename => '/files/rails.png'
       assert_valid attachment
       assert attachment.size > 0, "no data was set"
-      
+
       attachment.temp_data = 'wtf'
       assert attachment.save_attachment?
       attachment.save!
-      
+
       assert_equal 'wtf', attachment_model.find(attachment.id).send(:current_data)
     end
   end
-  
+
   def test_no_reassign_attribute_data_on_nil
     assert_created 1 do
       attachment = upload_file :filename => '/files/rails.png'
       assert_valid attachment
       assert attachment.size > 0, "no data was set"
-      
+
       attachment.temp_data = nil
       assert !attachment.save_attachment?
     end
   end
-  
+
   def test_should_overwrite_old_contents_when_updating
     attachment   = upload_file :filename => '/files/rails.png'
     assert_not_created do # no new db_file records
@@ -47,7 +47,7 @@ module BaseAttachmentTests
       end
     end
   end
-  
+
   def test_should_save_without_updating_file
     attachment = upload_file :filename => '/files/foo.txt'
     assert_valid attachment

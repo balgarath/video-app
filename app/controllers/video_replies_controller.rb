@@ -9,9 +9,9 @@ class VideoRepliesController < ApplicationController
       redirect_to @reply.video
     else
       render @reply.video
-			
+
 		end
-		
+
 	end
 
 	def delete
@@ -20,5 +20,5 @@ class VideoRepliesController < ApplicationController
     @reply.destroy
     redirect_to	@video
 	end
-	
+
 end

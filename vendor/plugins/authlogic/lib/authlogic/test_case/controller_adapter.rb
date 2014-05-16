@@ -6,7 +6,7 @@ module Authlogic
       def authenticate_with_http_basic(&block)
         controller.authenticate_with_http_basic(&block)
       end
-      
+
       def cookies
         new_cookies = {}
         super.each do |key, value|
@@ -14,15 +14,15 @@ module Authlogic
         end
         new_cookies
       end
-      
+
       def cookie_domain
         nil
       end
-      
+
       def request
         @request ||= MockRequest.new
       end
-      
+
       def request_content_type
         request.format.to_s
       end

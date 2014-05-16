@@ -4,10 +4,10 @@
 		<% for video in @videos do %>
 
 		  <a href = "<%= video_url(video) %>" class = "video_thumb">
-			  
+
 		  		<%= video.thumbnail ? image_tag(video.thumbnail.public_filename) : "No Thumbnail Available" %>
 		  		<p><%= video.title %></p>
-					<p>Uploaded By: <%= video.user.login %></p>		  	
+					<p>Uploaded By: <%= video.user.login %></p>
 		 	</a>
 
 		<% end %>
@@ -15,6 +15,6 @@
 	</div><!-- /video_container -->
 <div class = "clear-right">.</div>
 		<%= will_paginate @videos, :class => "pagination page-wide" %>
-		 	
+
 	<br />
 

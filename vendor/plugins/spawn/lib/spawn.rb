@@ -55,7 +55,7 @@ module Spawn
       fork_it(options) { yield }
     end
   end
-  
+
   def wait(sids = [])
     # wait for all threads and/or forks (if a single sid passed in, convert to array first)
     Array(sids).each do |sid|
@@ -72,7 +72,7 @@ module Spawn
     # clean up connections from expired threads
     ActiveRecord::Base.verify_active_connections!()
   end
-  
+
   class SpawnId
     attr_accessor :type
     attr_accessor :handle

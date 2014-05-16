@@ -1,15 +1,15 @@
 class Video < ActiveRecord::Base
-	
+
 	acts_as_taggable
-	
+
   belongs_to :thumbnail
 	belongs_to :user
 	has_many :replies, :class_name => 'VideoReply'
-  
+
   before_create :save_thumbnail
 
-	has_attachment :content_type => :video, 
-                 :storage => :file_system, 
+	has_attachment :content_type => :video,
+                 :storage => :file_system,
                  :max_size => 300.megabytes
 
   #acts as state machine plugin
@@ -30,7 +30,7 @@ class Video < ActiveRecord::Base
   event :failure do
     transitions :from => :converting, :to => :error
   end
-  
+
 	def rename_file
 		true
 	end
@@ -61,18 +61,18 @@ class Video < ActiveRecord::Base
 
 
   protected
-  
+
   def convert_command
-		
+
 		#construct new file extension
     flv =  "." + id.to_s + ".flv"
 
 		#build the command to execute ffmpeg
     command = <<-end_command
      ffmpeg -i #{ RAILS_ROOT + '/public' + public_filename } -ar 22050 -s 720x480 -f flv -y #{ RAILS_ROOT + '/public' + public_filename + flv }
-      
+
     end_command
-    
+
     logger.debug "Converting video...command: " + command
     command
   end

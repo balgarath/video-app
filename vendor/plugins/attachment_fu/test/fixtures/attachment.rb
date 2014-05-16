@@ -78,7 +78,7 @@ end
 class MinimalAttachment < ActiveRecord::Base
   has_attachment :path_prefix => 'vendor/plugins/attachment_fu/test/files', :processor => :rmagick
   validates_as_attachment
-  
+
   def filename
     "#{id}.file"
   end

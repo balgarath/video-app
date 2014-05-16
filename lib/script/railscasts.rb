@@ -3,10 +3,10 @@ require 'scrubyt'
 
 data = Scrubyt::Extractor.define do
 	fetch 'http://railscasts.com/episodes/archive'
-	
+
 	link "/html/body/div/div[2]/div/div/a" do
 		title "/html/body/div/div[2]/div/div/a"
-		url("href", { :type => :attribute })	
+		url("href", { :type => :attribute })
 	end
 end
 
@@ -27,5 +27,5 @@ for u in urls do
 	        end
 	end
 	puts data.to_xml
-	
+
 end

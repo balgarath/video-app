@@ -9,7 +9,7 @@ module Authlogic
         klass.extend ClassMethods
         klass.send(:include, InstanceMethods)
       end
-      
+
       module ClassMethods
         # How to name the attributes of Authlogic, works JUST LIKE ActiveRecord, but instead it uses the following
         # namespace:
@@ -20,25 +20,25 @@ module Authlogic
           options[:default] ||= attribute_key_name.humanize
           I18n.t("attributes.#{name.underscore}.#{attribute_key_name}", options)
         end
-        
+
         # How to name the class, works JUST LIKE ActiveRecord, except it uses the following namespace:
         #
         #   authlogic.models.user_session
         def human_name(*args)
           I18n.t("models.#{name.underscore}", {:count => 1, :default => name.humanize})
         end
-        
+
         # For rails < 2.3, mispelled
         def self_and_descendents_from_active_record
           [self]
         end
-        
+
         # For Rails >2.3, fix mispelling
         def self_and_descendants_from_active_record
           [self]
         end
       end
-      
+
       module InstanceMethods
         # Don't use this yourself, this is to just trick some of the helpers since this is the method it calls.
         def new_record?
